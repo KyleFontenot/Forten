@@ -1,0 +1,38 @@
+@import "mixins";
+
+/* -- Color Choices -- */
+$colorPrimary: #90FFF5;
+$colorSecondary: #FB4D3A;
+$colorTertiary: #54294C;
+$colorFourth: #1E1E3D;
+
+
+$colorTextGrey: adjust-color($colorSecondary, $saturation: -10%, $lightness: -40%);
+
+
+
+/* -- Fonts -- */
+$fontDir: 'fonts/';
+
+
+$fontPrimary: 'Nunito';
+
+$fontPrimaryWeights: ('-Light':200, '-Regular':400, '-Bold':700);
+$fontPrimaryItalics: ('-LightItalic':200, '-Italic':400, '-BoldItalic':700);
+@each $w, $n in $fontPrimaryWeights {
+  @include fontScaffold('#{$fontDir}/#{$fontPrimary}/#{$fontPrimary}', $fontPrimary, $w, $n);
+}
+@each $w, $n in $fontPrimaryItalics {
+  @include fontScaffold('#{$fontDir}/#{$fontPrimary}/#{$fontPrimary}', $fontPrimary, $w, $n,true);
+}
+
+$fontSecondary: 'WorkSans';
+
+$fontSecondaryWeights: ('-Light':200, '-Regular':400,'-Medium':500 ,'-Bold':700);
+$fontSecondaryItalics: ('-LightItalic':200, '-Italic':400, '-BoldItalic':700);
+@each $w, $n in $fontSecondaryWeights {
+  @include fontScaffold('#{$fontDir}/#{$fontSecondary}/#{$fontSecondary}', $fontSecondary, $w, $n);
+}
+@each $w, $n in $fontSecondaryItalics {
+  @include fontScaffold('#{$fontDir}/#{$fontSecondary}/#{$fontSecondary}', $fontSecondary, $w, $n,true);
+}

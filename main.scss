@@ -1,0 +1,186 @@
+@import "options";
+@import "flexbox";
+
+/*
+
+	Todo:
+		1. for button styling, add {cursor:pointer;}?
+		2. make a max-width layout option
+		3. make a wrapper element
+
+*/
+
+/* -- Framework -- */
+
+@include CssReset();
+
+body {
+	font-family:$fontSecondary;
+	font-size:13px;
+}
+h1 {
+	font-family:$fontPrimary;
+	font-size:32px;
+	letter-spacing:2.4px;
+	font-weight:bold;
+	margin-bottom:1.6rem;
+	line-height:54px;
+}
+h2 {
+	font-family:$fontPrimary;
+	font-size:26px;
+	letter-spacing:1px;
+	margin-bottom:0.8rem;
+	margin-top:0.8rem;
+}
+h3 {
+	font-family:$fontSecondary;
+	font-size:20px;
+	font-weight:bold;
+	letter-spacing:1.6px;
+	line-height:38px;
+	margin-bottom:0.5rem;
+}
+h4 {
+	font-family:$fontSecondary;
+	font-size:18px;
+	color:$colorTextGrey;
+	//color:#888;
+	line-height:28px;
+	letter-spacing:1.4px;
+	padding-top:1rem;
+	padding-bottom:1rem;
+}
+ul > * {
+	margin:1rem auto 1.2rem;
+	width:90%;
+}
+p {
+	margin-bottom:1rem;
+}
+pre .codeblock{
+	background-color:#777;
+	background:linear-gradient(to bottom, #666,#777);
+	display:block;
+	border-radius:16px;
+	color:#fff;
+	padding:2rem;
+}
+i {
+	font-style:italic;
+}
+.caption {
+	color: #696969;
+	background-color:#f8f8f8;
+	width:90%;
+	border-radius:16px;
+	padding:1.6rem;
+	margin:0 auto;
+}
+code {
+font-family:monospace;
+}
+nav ul{
+	list-style-type:none;
+
+}
+dd {
+	margin:1rem 1rem 1rem 2rem;
+}
+nav ul li a{
+	text-decoration:none;
+}
+table {
+	width:80%;
+}
+th {
+	font-weight:bold;
+}
+
+
+p, dd {
+  line-height:1.6rem;
+  letter-spacing:0.4px;
+}
+input {
+	padding:0.5rem;
+}
+
+hr {
+  width:80%;
+  border-top:1px solid #444;
+  border-bottom: none;
+  margin: 1.5rem auto;
+}
+
+u {
+	text-decoration:none;
+	padding-bottom:0.1rem;
+	border-bottom: 2px solid #aaa;
+}
+
+input[type='email'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='url'],
+textarea,
+select {
+	appearance: none;
+	background-color: rgba(255,255,255,0);
+	border: 1rem solid #3afbc5;
+	border-radius: 12px;
+	box-shadow: none;
+	box-sizing: inherit;
+	height: 3.8rem;
+	padding: .6rem 1.0rem;
+	width: 100%;
+}
+
+	input[type='email']:focus,
+	input[type='number']:focus,
+	input[type='password']:focus,
+	input[type='search']:focus,
+	input[type='tel']:focus,
+	input[type='text']:focus,
+	input[type='url']:focus,
+	textarea:focus,
+	select:focus {
+		border-color: white;
+		outline: 0;
+	}
+
+select {
+	padding-right: 3.0rem;
+	padding-left: 3.0rem;
+}
+
+textarea {
+	min-height: 6.5rem;
+}
+
+label,
+legend {
+	display: block;
+	font-size: 1.6rem;
+	font-weight: 700;
+	margin-bottom: .5rem;
+}
+
+fieldset {
+	border-width: 0;
+	padding: 0;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+	display: inline;
+}
+
+.label-inline {
+	display: inline-block;
+	font-weight: normal;
+	margin-left: .5rem;
+}
