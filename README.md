@@ -1,12 +1,13 @@
 # Forten
-My lightweight proprietary CSS framework highlighting:
-* Lightweight
+Proprietary CSS framework featuring:
+* Small file size
 * SCSS derived
-* Grid layout system lighter and more concise than Bootstrap 
+* Flexbox-based system lighter and more concise than Bootstrap 
 * B.E.M. class-naming scheme 
 * Flat design aesthetics
+* Optional Javascript functionality
 
-Todo:
+## Todo:
 - [x]  for button styling, add `{cursor:pointer;}`?
 - [x]  add dashes to scss styling to be able to select pieces of the name really easily.
 - [ ]  fill in all HTML elements for the whole document
@@ -29,4 +30,4 @@ Todo:
 - [ ]  add comment styling for _options.scss file for upfront streamlined options
 - [ ]  make a way to display a file tree for demonstrating special structures like when a parent div class must have specific children
 
-© Kyle Fontenot
+© Kyle Fontenot 2020
