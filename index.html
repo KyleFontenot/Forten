@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="main.css" type="text/css">
 
   <link rel="stylesheet" href="main.min.css" type="text/css">
+
 </head>
 <body id="body">
   <div class="container">
@@ -34,6 +35,59 @@
       <p>Flexbox allows easy and consise style assignments for any type of layout.
         Conventional strucutures work, along with B.E.M.-named class augments.
       </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <h2>Default Color</h2>
+      <p>Along with changeable colors using SCSS variables, shades of the color palette can be selected with the SCSS suffix "-Dark". </p>
+      <div class="swatch"><p>$color-Primary</p></div>
+      <div class="swatch" style="background-color:#FB4D3A;"><p>$color-Secondary</p></div>
+      <div class="swatch" style="background-color:#54294C;"><p>$color-Tertiary</p></div>
+      <div class="swatch" style="background-color:#1E1E3D;"><p>$color-Quaternary</p></div> <br/>
+      <div class="swatch" style="background-color:;" id="swatch5"><p>$color-Primary-Dark</p></div>
+      <div class="swatch" style="background-color:;" id="swatch6"><p>$color-Secondary-Dark</p></div>
+      <div class="swatch" style="background-color:;" id="swatch7"><p>$color-Tertiary-Dark</p></div>
+      <div class="swatch" style="background-color:;" id="swatch8"><p>$color-Quaternary-Dark</p></div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <h2>Elements</h2>
+      <h3>Forms</h3>
+      <form>
+        <label for="textbox">Name:</label>
+        <input type="text">
+        <label for="textbox">Phone:</label>
+        <input type="tel">
+        <br/>
+        <br/>
+
+        <div class="checkbox">
+          <input type="checkbox" for="checkA">
+          <label for="checkA"></label>
+        </div>
+
+        <br/>
+        <br/>
+        <input type="checkbox" class=""><input type="checkbox" class=""><br/>
+        <input type="radio"><input type="radio">
+        <br/>
+        <br/><br/><br/>
+        <div class="switch">
+          <input id="switch-1" type="checkbox" class="switch__input" />
+          <label for="switch-1" class="switch__label">Switch</label>
+        </div>
+        <br/><br/>
+        <input type="range" id="exampleSlider" min="1" max="20">
+
+        <input type="number">
+        <input type="submit">
+
+        <h3>Buttons</h3>
+        <button>Button</button><button class="button--secondary">Secondary Button</button>
+
     </div>
   </div>
 

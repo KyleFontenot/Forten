@@ -1,25 +1,27 @@
+//   Forten Framework
+//		 Kyle Fontenot
+
 @import "options";
 @import "flexbox";
+@import "inputrange";
 
-/*
 
-	Todo:
-		1. for button styling, add {cursor:pointer;}?
-		2. make a max-width layout option
-		3. make a wrapper element
-
-*/
+/* TEMPORARY*/
+	#swatch5 {background-color:$color-Primary-Dark;}
+	#swatch6 {background-color:$color-Secondary-Dark;}
+	#swatch7 {background-color:$color-Tertiary-Dark;}
+	#swatch8 {background-color:$color-Quaternary-Dark;}
 
 /* -- Framework -- */
 
 @include CssReset();
 
 body {
-	font-family:$fontSecondary;
+	font-family:$font-Primary;
 	font-size:13px;
 }
 h1 {
-	font-family:$fontPrimary;
+	font-family:$font-Secondary;
 	font-size:32px;
 	letter-spacing:2.4px;
 	font-weight:bold;
@@ -27,14 +29,14 @@ h1 {
 	line-height:54px;
 }
 h2 {
-	font-family:$fontPrimary;
+	font-family:$font-Secondary;
 	font-size:26px;
 	letter-spacing:1px;
 	margin-bottom:0.8rem;
 	margin-top:0.8rem;
 }
 h3 {
-	font-family:$fontSecondary;
+	font-family:$font-Primary;
 	font-size:20px;
 	font-weight:bold;
 	letter-spacing:1.6px;
@@ -42,9 +44,9 @@ h3 {
 	margin-bottom:0.5rem;
 }
 h4 {
-	font-family:$fontSecondary;
+	font-family:$font-Primary;
 	font-size:18px;
-	color:$colorTextGrey;
+	color:$color-Primary-Dark;
 	//color:#888;
 	line-height:28px;
 	letter-spacing:1.4px;
@@ -118,7 +120,9 @@ u {
 	padding-bottom:0.1rem;
 	border-bottom: 2px solid #aaa;
 }
-
+form {
+	margin-left:1rem;
+}
 input[type='email'],
 input[type='number'],
 input[type='password'],
@@ -129,58 +133,221 @@ input[type='url'],
 textarea,
 select {
 	appearance: none;
-	background-color: rgba(255,255,255,0);
-	border: 1rem solid #3afbc5;
-	border-radius: 12px;
-	box-shadow: none;
+	background-color: transparent;
+	border:2px solid transparent;
+	border-radius: 10px;
+	box-shadow: -1px 2px 6px -2px inset #aaa;
 	box-sizing: inherit;
-	height: 3.8rem;
-	padding: .6rem 1.0rem;
-	width: 100%;
-}
-
-	input[type='email']:focus,
-	input[type='number']:focus,
-	input[type='password']:focus,
-	input[type='search']:focus,
-	input[type='tel']:focus,
-	input[type='text']:focus,
-	input[type='url']:focus,
-	textarea:focus,
-	select:focus {
-		border-color: white;
+	padding: 0.8rem 1rem;
+	display:inline-block;
+	margin:1rem 1.5rem 1rem 0;
+	transition:box-shadow 0.4s ease-in-out;
+	&:hover {
+		outline: 0;
+		box-shadow: -2px 3px 9px -4px inset $color-Primary-Dark;
+	}
+	&:focus {
+		border:2px solid $color-Primary;
 		outline: 0;
 	}
+}
+input[type='checkbox'],
+input[type='radio'] {
+	border:0;
+	margin:1rem 1rem 0.5rem 0;
+	cursor:pointer;
+	&:before {
+		width:60px;
+		height:60px;
+		background-color:#bbb;
+		display:inline-block;
+		position:absolute;
+		top:0;
+		left:0;
+	}
+		&:checked {
 
-select {
-	padding-right: 3.0rem;
-	padding-left: 3.0rem;
+	}
 }
 
-textarea {
-	min-height: 6.5rem;
+button, input[type='submit'] {
+	padding:0.8rem 1.4rem;
+	position:relative;
+  border-radius: 12px;
+	color:#777;
+	border: solid 3px transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+	background-color:rgba(255,255,255,0);
+	font-family: $font-Secondary;
+	font-size:14px;
+	letter-spacing:1.5px;
+	transition: box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+	font-weight:bold;
+	cursor:pointer;
+	margin:1rem 1rem 1.5rem 0;
+	box-shadow:0;
+	@include buttonAlts($color-Primary)
+	&:after {
+		content:"";
+		width:100%;
+		height:100%;
+		display:block;
+		position:absolute;
+		left:0;
+		top:0;
+		background-color:transparent;
+		border-radius:8px;
+		transition:background-color 0.4s ease-in-out;
+	}
+}
+.button--secondary {
+	@include buttonAlts($color-Secondary);
+}
+.button--tertiary {
+	@include buttonAlts($color-Tertiary);
 }
 
+
+.switch {
+  position: relative;
+  display: inline-block;
+		.switch__input {
+		  display: none;
+		}
+		.switch__label {
+		  display: block;
+		  width: 48px;
+		  height: 24px;
+		  color: transparent;
+		  user-select: none;
+		}
+		.switch__label::before,
+		.switch__label::after {
+		  content: "";
+		  display: block;
+		  position: absolute;
+		  cursor: pointer;
+		}
+		.switch__label::before {
+		  width: 100%;
+		  height: 100%;
+		  background-color: #f2f2f2;
+		  border-radius: 100px;
+			box-shadow:-1px 3px 3px -1px inset #aaa;
+		  -webkit-transition: background-color 0.15s ease-in-out;
+		  transition: background-color 0.3s ease-out, box-shadow 0.35s ease-in;
+		}
+		.switch__label::after {
+		  top: 0;
+		  left: 0;
+		  width: 24px;
+		  height: 24px;
+		  border-radius: 50%;
+		  background-color: #fff;
+		  box-shadow: 0 3px 4px -2px #999;
+		  -webkit-transition: left 0.2s ease-in;
+		  transition: left 0.2s ease-in;
+		}
+		.switch__input:checked + .switch__label::before {
+		  background-color: $color-Primary;
+			box-shadow:0px 1px 4px -2px inset rgba(40, 40, 40, 0.4);
+		}
+		.switch__input:checked + .switch__label::after {
+		  left: 24px;
+		}
+}
+
+
+.checkbox input:checked ~ label:before { content: "*"; }
+.checkbox input { display: none; }
+/* CUSTOM SQUARE */
+.checkbox label:before {
+  display: inline-block;
+  content: "\00a0"; /* Blank space */
+  width: 20px;
+  margin-right: 5px;
+  text-align: center;
+  background: #f2f2f2;
+}
+/* OPTIONAL COSMETICS */
+.checkbox {
+  font-size: 16px;
+  line-height: 20px;
+  margin: 10px;
+}
+.checkbox label { cursor: pointer; }
+.checkbox label:hover::before { background: #ddd; }
+
+
+
+// Using darlanrod's _inputrange.scss
+[type='range']{
+	width:80%;
+	&::-webkit-slider-runnable-track {
+	background: linear-gradient(0deg, white, #ddd);
+		&:active, &:focus, &:hover, &:target {
+			background: linear-gradient(0deg, white, #ddd);
+		}
+	}
+	&::-moz-range-track {
+    background: linear-gradient(0deg, white, #ddd);
+		&:active, &:focus, &:hover, &:target {
+	    background: linear-gradient(0deg, white, #ddd);
+	  }
+  }
+}
+
+
+label {
+	text-indent:1rem;
+}
 label,
 legend {
 	display: block;
-	font-size: 1.6rem;
-	font-weight: 700;
-	margin-bottom: .5rem;
+	font-size:16px;
+	letter-spacing:2px;
+	color:#777;
 }
-
+input[type="range"] {
+	display:block;
+}
 fieldset {
 	border-width: 0;
 	padding: 0;
 }
 
-input[type='checkbox'],
-input[type='radio'] {
-	display: inline;
+
+
+
+.swatch {
+	width:11rem;
+	height:11rem;
+	position:relative;
+	border-radius:28px;
+	background-color:$color-Primary;
+	overflow:hidden;
+	display:inline-block;
+	margin:1rem 1rem;
+	& p {
+		position:absolute;
+		bottom:0;
+		background-color:rgba(20,20,20,0.5);
+		width:100%;
+		max-width:100%;
+		color:white;
+		text-align:center;
+		display:block;
+		right:0;
+		padding-left:1rem;
+		margin-bottom:0;
+		padding-top:0.7rem;
+		padding-bottom:0.7rem;
+	}
 }
 
-.label-inline {
-	display: inline-block;
-	font-weight: normal;
-	margin-left: .5rem;
-}
+
+
+
+/* media selectors   */
+// do @media only screen and (min-width)

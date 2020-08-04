@@ -1,38 +1,38 @@
 @import "mixins";
 
 /* -- Color Choices -- */
-$colorPrimary: #90FFF5;
-$colorSecondary: #FB4D3A;
-$colorTertiary: #54294C;
-$colorFourth: #1E1E3D;
+$color-Primary: #79eadf;
+$color-Secondary: #FB4D3A;
+$color-Tertiary: #54294C;
+$color-Quaternary: #1E1E3D;
 
-
-$colorTextGrey: adjust-color($colorSecondary, $saturation: -10%, $lightness: -40%);
-
+$color-Primary-Dark: adjust-color($color-Primary, $saturation: -10%, $lightness: -40%);
+$color-Secondary-Dark: adjust-color($color-Secondary, $saturation: -10%, $lightness: -40%);
+$color-Tertiary-Dark: adjust-color($color-Tertiary, $saturation: -10%, $lightness: -40%);
+$color-Quaternary-Dark: adjust-color($color-Quaternary, $saturation: -10%, $lightness: -40%);
 
 
 /* -- Fonts -- */
-$fontDir: 'fonts/';
+$font-Dir: 'fonts/';
 
+$font-Primary: 'WorkSans';
 
-$fontPrimary: 'Nunito';
-
-$fontPrimaryWeights: ('-Light':200, '-Regular':400, '-Bold':700);
-$fontPrimaryItalics: ('-LightItalic':200, '-Italic':400, '-BoldItalic':700);
-@each $w, $n in $fontPrimaryWeights {
-  @include fontScaffold('#{$fontDir}/#{$fontPrimary}/#{$fontPrimary}', $fontPrimary, $w, $n);
+$font-Primary-Weights: ('-Light':200, '-Regular':400,'-Medium':500 ,'-Bold':700);
+$font-Primary-Italics: ('-LightItalic':200, '-Italic':400, '-BoldItalic':700);
+@each $w, $n in $font-Primary-Weights {
+  @include fontScaffold('#{$font-Dir}/#{$font-Primary}/#{$font-Primary}', $font-Primary, $w, $n);
 }
-@each $w, $n in $fontPrimaryItalics {
-  @include fontScaffold('#{$fontDir}/#{$fontPrimary}/#{$fontPrimary}', $fontPrimary, $w, $n,true);
+@each $w, $n in $font-Primary-Italics {
+  @include fontScaffold('#{$font-Dir}/#{$font-Primary}/#{$font-Primary}', $font-Primary, $w, $n,true);
 }
 
-$fontSecondary: 'WorkSans';
+$font-Secondary: 'Nunito';
 
-$fontSecondaryWeights: ('-Light':200, '-Regular':400,'-Medium':500 ,'-Bold':700);
-$fontSecondaryItalics: ('-LightItalic':200, '-Italic':400, '-BoldItalic':700);
-@each $w, $n in $fontSecondaryWeights {
-  @include fontScaffold('#{$fontDir}/#{$fontSecondary}/#{$fontSecondary}', $fontSecondary, $w, $n);
+$font-Secondary-Weights: ('-Light':200, '-Regular':400, '-Bold':700);
+$font-Secondary-Italics: ('-LightItalic':200, '-Italic':400, '-BoldItalic':700);
+@each $w, $n in $font-Secondary-Weights {
+  @include fontScaffold('#{$font-Dir}/#{$font-Secondary}/#{$font-Secondary}', $font-Secondary, $w, $n);
 }
-@each $w, $n in $fontSecondaryItalics {
-  @include fontScaffold('#{$fontDir}/#{$fontSecondary}/#{$fontSecondary}', $fontSecondary, $w, $n,true);
+@each $w, $n in $font-Secondary-Italics {
+  @include fontScaffold('#{$font-Dir}/#{$font-Secondary}/#{$font-Secondary}', $font-Secondary, $w, $n,true);
 }
