@@ -1,5 +1,10 @@
 # Forten
-My lightweight proprietary CSS framework highlighting a small fize size
+My lightweight proprietary CSS framework highlighting:
+* Lightweight
+* SCSS derived
+* Grid layout system lighter and more concise than Bootstrap 
+* B.E.M. class-naming scheme 
+* Flat design aesthetics
 
 Todo:
 - [x]  for button styling, add `{cursor:pointer;}`?
