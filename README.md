@@ -1,5 +1,5 @@
-# Forten
-Proprietary CSS framework featuring:
+# Forten CSS Framework
+Featuring:
 * Small file size
 * SCSS derived
 * Flexbox-based system lighter and more concise than Bootstrap 
