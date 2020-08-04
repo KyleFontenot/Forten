@@ -1,7 +1,7 @@
 # Forten CSS Framework
 Featuring:
 * Small file size
-* SCSS derived
+* SCSS foundation and user-friendly variables
 * Flexbox-based system lighter and more concise than Bootstrap 
 * B.E.M. class-naming scheme 
 * Flat design aesthetics
