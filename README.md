@@ -2,7 +2,7 @@
 Featuring:
 * Small file size
 * SCSS foundation and user-friendly variables
-* Flexbox-based system lighter and more concise than Bootstrap 
+* Flexbox-based system lighter and than Bootstrap 
 * B.E.M. class-naming scheme 
 * Flat design aesthetics
 * Optional Javascript functionality
