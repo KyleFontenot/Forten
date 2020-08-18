@@ -1,7 +1,7 @@
 //   Forten Framework
-//		 Kyle Fontenot
+//	 &copy; 2020 Kyle Fontenot
 
-@import "options";
+@import "mixins";
 @import "flexbox";
 @import "inputrange";
 
@@ -18,11 +18,72 @@
 
 body {
 	font-family:$font-Primary;
-	font-size:13px;
+	font-size:0.8rem;
 }
+.hero {
+	position:relative;
+	min-width:20rem;
+	display:block;
+	width:100%;
+
+	&.hero--main {
+		background-image:linear-gradient(to bottom right, $color-Primary 10%, white 70%, $color-Secondary);
+		background-attachment:local;
+		background-size:100%;
+		background-position: 10% 10%;
+		left:0;
+		min-height:38rem;
+		max-height:50vh;
+		color:#666;
+
+
+		&::after {
+			content:"";
+			background-color:white;
+			position:absolute;
+			left:-10rem;
+			bottom:-18rem;
+			width: 120rem;
+      height: 16rem;
+			transform: rotate(14deg);
+
+		}
+		& .hero--main__sub {
+			position:absolute;
+			top:40%;
+			right:10%;
+		}
+	}
+}
+
+// Refer to the mixins SCSS partial for the logical constructor for nav
+nav {
+	font-size:16px;
+	letter-spacing:1.2px;
+	padding-left:2rem;
+	padding-right:2rem;
+	z-index:800;
+	& ul {
+
+		& li {
+			display:inline-block;
+			@include navItemAlign;
+			margin-right: 1rem;
+			& a {
+				display:block;
+				padding:1.2rem;
+				padding-left:4rem;
+				padding-right:4rem;
+				border-radius:16px;
+
+			}
+		}
+	}
+}
+
 h1 {
 	font-family:$font-Secondary;
-	font-size:32px;
+	font-size:2.2rem;
 	letter-spacing:2.4px;
 	font-weight:bold;
 	margin-bottom:1.6rem;
@@ -30,14 +91,14 @@ h1 {
 }
 h2 {
 	font-family:$font-Secondary;
-	font-size:26px;
+	font-size:1.9rem;
 	letter-spacing:1px;
 	margin-bottom:0.8rem;
 	margin-top:0.8rem;
 }
 h3 {
 	font-family:$font-Primary;
-	font-size:20px;
+	font-size:1.5rem;
 	font-weight:bold;
 	letter-spacing:1.6px;
 	line-height:38px;
@@ -45,28 +106,35 @@ h3 {
 }
 h4 {
 	font-family:$font-Primary;
-	font-size:18px;
+	font-size:1.3rem;
 	color:$color-Primary-Dark;
-	//color:#888;
 	line-height:28px;
 	letter-spacing:1.4px;
 	padding-top:1rem;
 	padding-bottom:1rem;
 }
-ul > * {
-	margin:1rem auto 1.2rem;
-	width:90%;
-}
+
+
 p {
 	margin-bottom:1rem;
 }
-pre .codeblock{
-	background-color:#777;
-	background:linear-gradient(to bottom, #666,#777);
+pre {
+	border-radius: 20px;
+	font-size:1.1rem;
+	display:inline-block;
+	min-width:50%;
+	padding:2rem;
+	box-shadow:-2px 4px 6px -2px  #666;
+	margin-bottom:1rem;
+	background-color:#f8f8f8;
+	background:linear-gradient(to bottom, #f8f8f8 2rem,#f4f4f4);
+}
+pre.pre--dark{
+	background-color:#666;
+	background:linear-gradient(to bottom, #666 2rem,#999);
 	display:block;
 	border-radius:16px;
 	color:#fff;
-	padding:2rem;
 }
 i {
 	font-style:italic;
@@ -76,7 +144,7 @@ i {
 	background-color:#f8f8f8;
 	width:90%;
 	border-radius:16px;
-	padding:1.6rem;
+	padding:1.2rem;
 	margin:0 auto;
 }
 code {
@@ -144,7 +212,7 @@ select {
 	transition:box-shadow 0.4s ease-in-out;
 	&:hover {
 		outline: 0;
-		box-shadow: -2px 3px 9px -4px inset $color-Primary-Dark;
+		box-shadow: -2px 3px 9px -4px inset $color-Primary;
 	}
 	&:focus {
 		border:2px solid $color-Primary;
@@ -317,9 +385,6 @@ fieldset {
 	padding: 0;
 }
 
-
-
-
 .swatch {
 	width:11rem;
 	height:11rem;
@@ -346,8 +411,9 @@ fieldset {
 	}
 }
 
-
-
+@-ms-viewport{
+    width: device-width;
+}
 
 /* media selectors   */
 // do @media only screen and (min-width)

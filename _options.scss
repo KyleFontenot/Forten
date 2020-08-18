@@ -1,6 +1,3 @@
-@import "mixins";
-
-/* -- Color Choices -- */
 $color-Primary: #79eadf;
 $color-Secondary: #FB4D3A;
 $color-Tertiary: #54294C;
@@ -11,6 +8,15 @@ $color-Secondary-Dark: adjust-color($color-Secondary, $saturation: -10%, $lightn
 $color-Tertiary-Dark: adjust-color($color-Tertiary, $saturation: -10%, $lightness: -40%);
 $color-Quaternary-Dark: adjust-color($color-Quaternary, $saturation: -10%, $lightness: -40%);
 
+// Nav settings
+$topHorizontalNav: true;
+    //
+    @mixin navItemAlign {
+      justify-content:flex-end;
+      //  options: flex-start, flex-end, center, space-evenly;
+    }
+$transparentNavBg: true;
+
 
 /* -- Fonts -- */
 $font-Dir: 'fonts/';
@@ -19,20 +25,9 @@ $font-Primary: 'WorkSans';
 
 $font-Primary-Weights: ('-Light':200, '-Regular':400,'-Medium':500 ,'-Bold':700);
 $font-Primary-Italics: ('-LightItalic':200, '-Italic':400, '-BoldItalic':700);
-@each $w, $n in $font-Primary-Weights {
-  @include fontScaffold('#{$font-Dir}/#{$font-Primary}/#{$font-Primary}', $font-Primary, $w, $n);
-}
-@each $w, $n in $font-Primary-Italics {
-  @include fontScaffold('#{$font-Dir}/#{$font-Primary}/#{$font-Primary}', $font-Primary, $w, $n,true);
-}
+
 
 $font-Secondary: 'Nunito';
 
 $font-Secondary-Weights: ('-Light':200, '-Regular':400, '-Bold':700);
 $font-Secondary-Italics: ('-LightItalic':200, '-Italic':400, '-BoldItalic':700);
-@each $w, $n in $font-Secondary-Weights {
-  @include fontScaffold('#{$font-Dir}/#{$font-Secondary}/#{$font-Secondary}', $font-Secondary, $w, $n);
-}
-@each $w, $n in $font-Secondary-Italics {
-  @include fontScaffold('#{$font-Dir}/#{$font-Secondary}/#{$font-Secondary}', $font-Secondary, $w, $n,true);
-}

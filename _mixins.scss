@@ -1,3 +1,4 @@
+@import "options";
 @mixin fontScaffold($path, $family, $suffix: '', $weight: 400, $italic: false, $svg: '') {
   @font-face {
     font-family: $family;
@@ -22,6 +23,73 @@
 		color: \$#{$primary}-Dark;
 	}
 }
+// Font additions for Primary //
+@each $w, $n in $font-Primary-Weights {
+  @include fontScaffold('#{$font-Dir}/#{$font-Primary}/#{$font-Primary}', $font-Primary, $w, $n);
+}
+@each $w, $n in $font-Primary-Italics {
+  @include fontScaffold('#{$font-Dir}/#{$font-Primary}/#{$font-Primary}', $font-Primary, $w, $n,true);
+}
+// Font additions for Secondary //
+@each $w, $n in $font-Secondary-Weights {
+  @include fontScaffold('#{$font-Dir}/#{$font-Secondary}/#{$font-Secondary}', $font-Secondary, $w, $n);
+}
+@each $w, $n in $font-Secondary-Italics {
+  @include fontScaffold('#{$font-Dir}/#{$font-Secondary}/#{$font-Secondary}', $font-Secondary, $w, $n,true);
+}
+
+// Layout option execution //
+@if ($topHorizontalNav == true) {
+  nav {
+    display:block;
+    position:relative;
+    top:0;
+    left:0;
+    padding:2rem;
+    background-color:#ccc;
+    background-size:100%;
+
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
+    & ul {
+      display:flex;
+      flex-direction:row;
+      @include navItemAlign;
+
+      & li {
+        display:block;
+      }
+    }
+  }
+  .hero--main {
+    top:-8rem;
+
+  }
+
+
+  @if ($transparentNavBg == true) {
+    nav {
+      background-color:transparent;
+      & ul {
+        & li {
+          background-color:transparent;
+          & a {
+            text-decoration:none;
+            background-color:transparent;
+            color:#666;
+            transition: all 0.6s ease;
+            &:hover {
+              background-color:white;
+              background-image:linear-gradient(to bottom left, transparent 30%, white)
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 
 
 @mixin CssReset(){
@@ -37,10 +105,17 @@
   table, caption, tbody, tfoot, thead, tr, th, td,
   article, aside, canvas, details, embed,
   figure, figcaption, footer, header, hgroup,
-  menu, nav, output, ruby, section, summary,
+  menu, output, ruby, section, summary,
   time, mark, audio, video {
   	margin: 0;
   	padding: 0;
+  	border: 0;
+  	font-size: 100%;
+  	font: inherit;
+  	vertical-align: baseline;
+  }
+  nav {
+    margin: 0;
   	border: 0;
   	font-size: 100%;
   	font: inherit;

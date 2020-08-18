@@ -2,14 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>JS Challenge 1</title>
-  <meta name="description" content="">
-  <link rel="stylesheet" href="main.css" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forten Framework</title>
+  <meta name="description" content="A lightweight, flexbox-based
+  CSS framework prioritizing in accessible SCSS options, grid class systems smaller but similar to Bootstrap's, and B.E.M. class schemes">
+
 
   <link rel="stylesheet" href="main.min.css" type="text/css">
 
 </head>
 <body id="body">
+  <nav>
+    <ul>
+      <li><a href="">Home</a></li>
+      <li><a href="">Home</a></li>
+      <li><a href="">Home</a></li>
+      <li><a href="">Home</a></li>
+    </ul>
+
+  </nav>
+  <div class="hero hero--main">
+    <div class="hero--main__sub" style="text-align:right;">
+    <h1 style="letter-spacing:8px;">Forten CSS Framework</h1>
+    <p>Something</p>
+  </div>
+  </div>
   <div class="container">
     <div class="row">
       <div class="column">
@@ -28,6 +45,7 @@
     </div>
 
 
+
   <div class="row">
     <div class="column">
       <h2>Minimalistic Grid System Based On Flexbox</h2>
@@ -35,6 +53,34 @@
       <p>Flexbox allows easy and consise style assignments for any type of layout.
         Conventional strucutures work, along with B.E.M.-named class augments.
       </p>
+    </div>
+    <div class="column">
+      <pre>
+        <code>
+.container {
+  .row {
+    .column{
+    }
+    & column--50 {
+    }
+  }
+}
+        </code>
+      </pre>
+      <pre>
+        <code class="codeblock">
+.container {
+  .row {
+    .column{
+
+    }
+    & column--50 {
+
+    }
+  }
+}
+        </code>
+      </pre>
     </div>
   </div>
   <div class="row">
@@ -93,5 +139,5 @@
 
 
 </body>
-<script src="script.js"></script>
+<!-- <script src="script.js"></script> -->
 </html>
