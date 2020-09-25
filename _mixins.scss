@@ -23,19 +23,33 @@
 		color: \$#{$primary}-Dark;
 	}
 }
-// Font additions for Primary //
-@each $w, $n in $font-Primary-Weights {
-  @include fontScaffold('#{$font-Dir}/#{$font-Primary}/#{$font-Primary}', $font-Primary, $w, $n);
+@mixin badgeAlts($badgecolor){
+  $lighterbadge: adjust-color($badgecolor, $saturation: -10%, $lightness: 20%);
+
+  background-image: linear-gradient(210deg, $lighterbadge, transparent 80%);
+	// &:hover {
+	// 	background-color: $primary;
+	// 	box-shadow:1px -2px 8px -4px inset \$#{$primary}-Dark;
+	// 	color: \$#{$primary}-Dark;
+	// }
 }
-@each $w, $n in $font-Primary-Italics {
-  @include fontScaffold('#{$font-Dir}/#{$font-Primary}/#{$font-Primary}', $font-Primary, $w, $n,true);
-}
-// Font additions for Secondary //
-@each $w, $n in $font-Secondary-Weights {
-  @include fontScaffold('#{$font-Dir}/#{$font-Secondary}/#{$font-Secondary}', $font-Secondary, $w, $n);
-}
-@each $w, $n in $font-Secondary-Italics {
-  @include fontScaffold('#{$font-Dir}/#{$font-Secondary}/#{$font-Secondary}', $font-Secondary, $w, $n,true);
+
+// Uncomment for enabling custom fonts
+// Font additions for Primary
+@if ($customFonts) {
+  @each $w, $n in $font-Primary-Weights {
+    @include fontScaffold('#{$font-Dir}/#{$font-Primary}/#{$font-Primary}', $font-Primary, $w, $n);
+  }
+  @each $w, $n in $font-Primary-Italics {
+    @include fontScaffold('#{$font-Dir}/#{$font-Primary}/#{$font-Primary}', $font-Primary, $w, $n,true);
+  }
+  // Font additions for Secondary //
+  @each $w, $n in $font-Secondary-Weights {
+    @include fontScaffold('#{$font-Dir}/#{$font-Secondary}/#{$font-Secondary}', $font-Secondary, $w, $n);
+  }
+  @each $w, $n in $font-Secondary-Italics {
+    @include fontScaffold('#{$font-Dir}/#{$font-Secondary}/#{$font-Secondary}', $font-Secondary, $w, $n,true);
+  }
 }
 
 // Layout option execution //
@@ -142,5 +156,11 @@
     html,body{
     	overflow-x: hidden;
       max-width:100%;
+    }
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
     }
 }

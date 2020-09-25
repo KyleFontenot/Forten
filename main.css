@@ -1,88 +1,6 @@
 /* -- Fonts -- */
-@font-face {
-  font-family: "WorkSans";
-  src: url("fonts//WorkSans/WorkSans-Light.ttf") format("truetype"), url("fonts//WorkSans/WorkSans-Light.otf") format("opentype"), url("fonts//WorkSans/WorkSans-Light.woff2") format("woff2"), url("fonts//WorkSans/WorkSans-Light.woff") format("woff");
-  font-weight: 200;
-}
-
-@font-face {
-  font-family: "WorkSans";
-  src: url("fonts//WorkSans/WorkSans-Regular.ttf") format("truetype"), url("fonts//WorkSans/WorkSans-Regular.otf") format("opentype"), url("fonts//WorkSans/WorkSans-Regular.woff2") format("woff2"), url("fonts//WorkSans/WorkSans-Regular.woff") format("woff");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "WorkSans";
-  src: url("fonts//WorkSans/WorkSans-Medium.ttf") format("truetype"), url("fonts//WorkSans/WorkSans-Medium.otf") format("opentype"), url("fonts//WorkSans/WorkSans-Medium.woff2") format("woff2"), url("fonts//WorkSans/WorkSans-Medium.woff") format("woff");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "WorkSans";
-  src: url("fonts//WorkSans/WorkSans-Bold.ttf") format("truetype"), url("fonts//WorkSans/WorkSans-Bold.otf") format("opentype"), url("fonts//WorkSans/WorkSans-Bold.woff2") format("woff2"), url("fonts//WorkSans/WorkSans-Bold.woff") format("woff");
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: "WorkSans";
-  src: url("fonts//WorkSans/WorkSans-LightItalic.ttf") format("truetype"), url("fonts//WorkSans/WorkSans-LightItalic.otf") format("opentype"), url("fonts//WorkSans/WorkSans-LightItalic.woff2") format("woff2"), url("fonts//WorkSans/WorkSans-LightItalic.woff") format("woff");
-  font-weight: 200;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "WorkSans";
-  src: url("fonts//WorkSans/WorkSans-Italic.ttf") format("truetype"), url("fonts//WorkSans/WorkSans-Italic.otf") format("opentype"), url("fonts//WorkSans/WorkSans-Italic.woff2") format("woff2"), url("fonts//WorkSans/WorkSans-Italic.woff") format("woff");
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "WorkSans";
-  src: url("fonts//WorkSans/WorkSans-BoldItalic.ttf") format("truetype"), url("fonts//WorkSans/WorkSans-BoldItalic.otf") format("opentype"), url("fonts//WorkSans/WorkSans-BoldItalic.woff2") format("woff2"), url("fonts//WorkSans/WorkSans-BoldItalic.woff") format("woff");
-  font-weight: 700;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("fonts//Nunito/Nunito-Light.ttf") format("truetype"), url("fonts//Nunito/Nunito-Light.otf") format("opentype"), url("fonts//Nunito/Nunito-Light.woff2") format("woff2"), url("fonts//Nunito/Nunito-Light.woff") format("woff");
-  font-weight: 200;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("fonts//Nunito/Nunito-Regular.ttf") format("truetype"), url("fonts//Nunito/Nunito-Regular.otf") format("opentype"), url("fonts//Nunito/Nunito-Regular.woff2") format("woff2"), url("fonts//Nunito/Nunito-Regular.woff") format("woff");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("fonts//Nunito/Nunito-Bold.ttf") format("truetype"), url("fonts//Nunito/Nunito-Bold.otf") format("opentype"), url("fonts//Nunito/Nunito-Bold.woff2") format("woff2"), url("fonts//Nunito/Nunito-Bold.woff") format("woff");
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("fonts//Nunito/Nunito-LightItalic.ttf") format("truetype"), url("fonts//Nunito/Nunito-LightItalic.otf") format("opentype"), url("fonts//Nunito/Nunito-LightItalic.woff2") format("woff2"), url("fonts//Nunito/Nunito-LightItalic.woff") format("woff");
-  font-weight: 200;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("fonts//Nunito/Nunito-Italic.ttf") format("truetype"), url("fonts//Nunito/Nunito-Italic.otf") format("opentype"), url("fonts//Nunito/Nunito-Italic.woff2") format("woff2"), url("fonts//Nunito/Nunito-Italic.woff") format("woff");
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("fonts//Nunito/Nunito-BoldItalic.ttf") format("truetype"), url("fonts//Nunito/Nunito-BoldItalic.otf") format("opentype"), url("fonts//Nunito/Nunito-BoldItalic.woff2") format("woff2"), url("fonts//Nunito/Nunito-BoldItalic.woff") format("woff");
-  font-weight: 700;
-  font-style: italic;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,200;1,400;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,200;1,400;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap");
 nav {
   display: block;
   position: relative;
@@ -130,10 +48,10 @@ nav ul li a:hover {
   background-image: linear-gradient(to bottom left, transparent 30%, white);
 }
 
-.container {
+.container, section {
   margin: 0 auto;
-  width: calc(100% - 4rem);
-  padding: 3rem;
+  width: 100%;
+  padding: 1rem 2rem;
   position: relative;
   display: inline-block;
 }
@@ -144,159 +62,151 @@ nav ul li a:hover {
   flex-wrap: wrap;
   padding-top: 1rem;
   width: 100%;
-  align-items: center;
-  justify-content: center;
+  align-content: space-evenly;
 }
 
-.row .column {
-  display: block;
-  flex: 1 1 auto;
-  margin-left: 0;
-  max-width: 100%;
-  /*   width: 100%;  ?? */
-}
-
-.row--row {
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-
-.row--padded {
-  padding: 2rem;
-}
-
-.column--centered {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.row {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  padding-top: 1rem;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
-.row .row .column {
+.row .col {
   display: block;
   flex: 1 1 auto;
   margin-left: 0;
   max-width: 100%;
 }
 
-.row .row .column .column--offset--10 {
+.row .col.col--offset--10 {
   margin-left: 10%;
 }
 
-.row .row .column .column--offset--20 {
+.row .col.col--offset--20 {
   margin-left: 20%;
 }
 
-.row .row .column .column--offset--25 {
+.row .col.col--offset--25 {
   margin-left: 25%;
 }
 
-.row .row .column .column--offset--33, .row .row .column .row .column.column-offset-34 {
+.row .col.col--offset--33, .row .col .row .col.col-offset-34 {
   margin-left: 33.3333%;
 }
 
-.row .row .column .column--offset--50 {
+.row .col.col--offset--50 {
   margin-left: 50%;
 }
 
-.row .row .column .column--offset--66, .row .row .column .row .column.column-offset-67 {
+.row .col.col--offset--66, .row .col .row .col.col-offset-67 {
   margin-left: 66.6666%;
 }
 
-.row .row .column .column--offset--75 {
+.row .col.col--offset--75 {
   margin-left: 75%;
 }
 
-.row .row .column .column--offset--80 {
+.row .col.col--offset--80 {
   margin-left: 80%;
 }
 
-.row .row .column .column--offset--90 {
+.row .col.col--offset--90 {
   margin-left: 90%;
 }
 
-.row .row .column .column--10 {
+.row .col.col--10 {
   flex: 0 0 10%;
   max-width: 10%;
 }
 
-.row .row .column .column--20 {
+.row .col.col--20 {
   flex: 0 0 20%;
   max-width: 20%;
 }
 
-.row .row .column .column.column--25 {
+.row .col.col.col--25 {
   flex: 0 0 25%;
   max-width: 25%;
 }
 
-.row .row .column .column--33, .row .row .column .row .column.column--34 {
+.row .col.col--33, .row .col .row .col.col--34 {
   flex: 0 0 33.3333%;
   max-width: 33.3333%;
 }
 
-.row .row .column .column--40 {
+.row .col.col--40 {
   flex: 0 0 40%;
   max-width: 40%;
 }
 
-.row .row .column .column--50 {
+.row .col.col--50 {
   flex: 0 0 50%;
   max-width: 50%;
 }
 
-.row .row .column .column--60 {
+.row .col.col--60 {
   flex: 0 0 60%;
   max-width: 60%;
 }
 
-.row .row .column .column--66, .row .row .column .column--67 {
+.row .col.col--66, .row .col .col--67 {
   flex: 0 0 66.6666%;
   max-width: 66.6666%;
 }
 
-.row .row .column .column--75 {
+.row .col.col--75 {
   flex: 0 0 75%;
   max-width: 75%;
 }
 
-.row .row .column .column--80 {
+.row .col.col--80 {
   flex: 0 0 80%;
   max-width: 80%;
 }
 
-.row .row .column .column--90 {
+.row .col.col--90 {
   flex: 0 0 90%;
   max-width: 90%;
 }
 
-.row .row .column .column--top {
+.row .col.col--top {
   align-self: flex-start;
 }
 
-.row .row .column .column-bottom {
+.row .col.col-bottom {
   align-self: flex-end;
 }
 
-.row .row .column .column-center {
+.row .col.col-center {
   -ms-grid-row-align: center;
   align-self: center;
+}
+
+.container .row {
+  margin-bottom: 0;
+}
+
+.row.row--row {
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.row.row--padded {
+  padding: 2rem;
+}
+
+.row.row--space-evenly {
+  justify-content: space-evenly;
+}
+
+.row.row--space-around {
+  justify-content: space-around;
+}
+
+.col.col--centered {
+  justify-content: center;
+  text-align: center;
 }
 
 @media (min-width: 40rem) {
   .row {
     flex-direction: row;
   }
-  .row .column {
+  .row .col {
     margin-bottom: inherit;
   }
 }
@@ -419,19 +329,15 @@ nav ul li a:hover {
 
 /* TEMPORARY*/
 #swatch5 {
-  background-color: #1c7b72;
+  background-color: #2ab9ab;
 }
 
 #swatch6 {
-  background-color: #621007;
+  background-color: #a91c0d;
 }
 
 #swatch7 {
-  background-color: black;
-}
-
-#swatch8 {
-  background-color: black;
+  background-color: #513d78;
 }
 
 /* -- Framework -- */
@@ -491,9 +397,18 @@ html, body {
   max-width: 100%;
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
-  font-family: "WorkSans";
-  font-size: 0.8rem;
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.9rem;
+  display: inline-block;
 }
 
 .hero {
@@ -503,114 +418,148 @@ body {
   width: 100%;
 }
 
-.hero.hero--main {
-  background-image: linear-gradient(to bottom right, #79eadf 10%, white 70%, #FB4D3A);
-  background-attachment: local;
-  background-size: 100%;
-  background-position: 10% 10%;
+.hero.hero--header {
+  animation-name: hero-main-animation;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  background-color: white;
+  animation-direction: alternate;
+  position: relative;
   left: 0;
-  min-height: 38rem;
+  top: 0;
+  min-height: 32rem;
   max-height: 50vh;
   color: #666;
 }
 
-.hero.hero--main::after {
+.hero.hero--header::after {
   content: "";
   background-color: white;
   position: absolute;
   left: -10rem;
   bottom: -18rem;
   width: 120rem;
-  height: 16rem;
+  height: 12rem;
   transform: rotate(14deg);
+  overflow: hidden;
+  display: inline;
 }
 
-.hero.hero--main .hero--main__sub {
+.hero.hero--header .hero--header__sub {
   position: absolute;
   top: 40%;
   right: 10%;
 }
 
+@keyframes hero-main-animation {
+  0% {
+    box-shadow: 8rem 4rem 15rem -5rem inset #79eadf, -2rem -1rem 8rem -4rem inset #FB4D3A;
+  }
+  50% {
+    box-shadow: 2rem 10rem 15rem -5rem inset #79eadf, -1rem -2rem 8rem -4rem inset #FB4D3A;
+  }
+  100% {
+    box-shadow: -8rem 6rem 15rem -5rem inset #79eadf, 2rem -1rem 8rem -4rem inset #FB4D3A;
+  }
+}
+
 nav {
-  font-size: 16px;
-  letter-spacing: 1.2px;
-  padding-left: 2rem;
-  padding-right: 2rem;
   z-index: 800;
+  position: absolute;
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 nav ul li {
   display: inline-block;
-  justify-content: flex-end;
-  margin-right: 1rem;
 }
 
 nav ul li a {
   display: block;
-  padding: 1.2rem;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  padding: 1.2rem 3.5rem;
   border-radius: 16px;
+  font-size: 1.2rem;
+  letter-spacing: 1.2px;
 }
 
 h1 {
-  font-family: "Nunito";
+  font-family: "Nunito", sans-serif;
   font-size: 2.2rem;
-  letter-spacing: 2.4px;
+  letter-spacing: 4px;
   font-weight: bold;
-  margin-bottom: 1.6rem;
+  padding-bottom: 1.4rem;
   line-height: 54px;
 }
 
 h2 {
-  font-family: "Nunito";
+  font-family: "Nunito", sans-serif;
   font-size: 1.9rem;
   letter-spacing: 1px;
-  margin-bottom: 0.8rem;
-  margin-top: 0.8rem;
+  padding-bottom: 1rem;
+  padding-top: 0.2rem;
 }
 
 h3 {
-  font-family: "WorkSans";
+  font-family: "Work Sans", sans-serif;
   font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 1.6px;
   line-height: 38px;
-  margin-bottom: 0.5rem;
+  padding-bottom: 0.8rem;
 }
 
 h4 {
-  font-family: "WorkSans";
+  font-family: "Work Sans", sans-serif;
   font-size: 1.3rem;
-  color: #1c7b72;
+  color: #2ab9ab;
   line-height: 28px;
   letter-spacing: 1.4px;
-  padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
 p {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+code {
+  font-family: monospace;
+  font-size: 1.2rem;
 }
 
 pre {
   border-radius: 20px;
   font-size: 1.1rem;
-  display: inline-block;
+  display: block;
   min-width: 50%;
+  margin: 1rem;
   padding: 2rem;
-  box-shadow: -2px 4px 6px -2px  #666;
-  margin-bottom: 1rem;
+  box-shadow: -2px 4px 8px -3px  #666;
   background-color: #f8f8f8;
-  background: linear-gradient(to bottom, #f8f8f8 2rem, #f4f4f4);
+  background: linear-gradient(to bottom, #fafafa 2rem, #f4f4f4);
 }
 
-pre.pre--dark {
+.pre--dark {
   background-color: #666;
   background: linear-gradient(to bottom, #666 2rem, #999);
-  display: block;
-  border-radius: 16px;
-  color: #fff;
+  color: white;
+}
+
+.pre--primary {
+  background-color: #79eadf;
+  background: linear-gradient(to bottom, #79eadf 2rem, #2ab9ab);
+  color: white;
+}
+
+.pre--secondary {
+  background-color: #FB4D3A;
+  background: linear-gradient(to bottom, #FB4D3A 2rem, #a91c0d);
+  color: white;
 }
 
 i {
@@ -620,18 +569,23 @@ i {
 .caption {
   color: #696969;
   background-color: #f8f8f8;
-  width: 90%;
   border-radius: 16px;
-  padding: 1.2rem;
-  margin: 0 auto;
-}
-
-code {
-  font-family: monospace;
+  padding: 1.4rem;
+  margin: 0.2rem 2.2rem 1.4rem;
+  box-shadow: -1px 2px 9px -5px  #666;
 }
 
 nav ul {
   list-style-type: none;
+}
+
+ul, ol {
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+ul li, ol li {
+  margin-bottom: 1.2rem;
 }
 
 dd {
@@ -741,7 +695,7 @@ input[type='radio']:before {
   left: 0;
 }
 
-button, input[type='submit'] {
+button, input[type='submit'], .button {
   padding: 0.8rem 1.4rem;
   position: relative;
   border-radius: 12px;
@@ -750,24 +704,23 @@ button, input[type='submit'] {
   background-origin: border-box;
   background-clip: padding-box, border-box;
   background-color: rgba(255, 255, 255, 0);
-  font-family: "Nunito";
+  font-family: "Nunito", sans-serif;
   font-size: 14px;
   letter-spacing: 1.5px;
   transition: box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out, color 0.4s ease-in-out;
   font-weight: bold;
   cursor: pointer;
   margin: 1rem 1rem 1.5rem 0;
-  box-shadow: 0;
   background-image: linear-gradient(white, white), linear-gradient(10deg, #79eadf, transparent 70%);
 }
 
-button:hover, input[type='submit']:hover {
+button:hover, input[type='submit']:hover, .button:hover {
   background-color: #79eadf;
   box-shadow: 1px -2px 8px -4px inset \$#79eadf-Dark;
   color: \$#79eadf-Dark;
 }
 
-button:after, input[type='submit']:after {
+button:after, input[type='submit']:after, .button:after {
   content: "";
   width: 100%;
   height: 100%;
@@ -791,13 +744,54 @@ button:after, input[type='submit']:after {
 }
 
 .button--tertiary {
-  background-image: linear-gradient(white, white), linear-gradient(10deg, #54294C, transparent 70%);
+  background-image: linear-gradient(white, white), linear-gradient(10deg, #8D70C5, transparent 70%);
 }
 
 .button--tertiary:hover {
-  background-color: #54294C;
-  box-shadow: 1px -2px 8px -4px inset \$#54294C-Dark;
-  color: \$#54294C-Dark;
+  background-color: #8D70C5;
+  box-shadow: 1px -2px 8px -4px inset \$#8D70C5-Dark;
+  color: \$#8D70C5-Dark;
+}
+
+.badge {
+  position: relative;
+  border-radius: 14px;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2rem;
+  padding: 1rem 1.4rem;
+  letter-spacing: 1.8px;
+  margin: 1rem 1rem 1.5rem 0;
+  transition: box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+  font-weight: bold;
+  display: inline-block;
+  color: #666;
+  background-image: linear-gradient(210deg, #d4f5f2, transparent 80%);
+}
+
+.badge.badge--Secondary {
+  background-image: linear-gradient(210deg, #f8aba3, transparent 80%);
+}
+
+.badge.badge--Tertiary {
+  background-image: linear-gradient(210deg, #c8bedd, transparent 80%);
+}
+
+.badge.badge--Grey {
+  background-image: linear-gradient(210deg, #999999, transparent 80%);
+}
+
+.badge.badge--large {
+  font-size: 1.8rem;
+  padding: 1.2rem 2rem;
+  letter-spacing: 3.5px;
+  border-radius: 20px;
+}
+
+.badge.badge--small {
+  font-size: 1rem;
+  padding: 0.7rem 1.4rem;
+  letter-spacing: 1.2px;
+  border-radius: 12px;
 }
 
 .switch {
@@ -931,15 +925,62 @@ fieldset {
   padding: 0;
 }
 
+#backToTop {
+  border: 2px solid #FB4D3A;
+  position: fixed;
+  bottom: 4rem;
+  right: 10%;
+  border-radius: 100%;
+  line-height: 6rem;
+  padding: 0.6rem;
+  background-color: white;
+  box-shadow: -2px 5px 8px -3px #333;
+}
+
+.gg-arrow-up {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.gg-arrow-up::after,
+.gg-arrow-up::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  top: 4px;
+}
+
+.gg-arrow-up::after {
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #FB4D3A;
+  border-left: 2px solid #FB4D3A;
+  transform: rotate(45deg);
+  left: 7px;
+}
+
+.gg-arrow-up::before {
+  width: 2px;
+  height: 16px;
+  left: 10px;
+  background: #FB4D3A;
+}
+
 .swatch {
-  width: 11rem;
-  height: 11rem;
+  min-width: 10rem;
+  min-height: 10rem;
   position: relative;
   border-radius: 28px;
   background-color: #79eadf;
   overflow: hidden;
   display: inline-block;
-  margin: 1rem 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: -2px 6px 10px -3px #333;
+  text-align: center;
 }
 
 .swatch p {
@@ -947,15 +988,11 @@ fieldset {
   bottom: 0;
   background-color: rgba(20, 20, 20, 0.5);
   width: 100%;
-  max-width: 100%;
   color: white;
   text-align: center;
   display: block;
-  right: 0;
-  padding-left: 1rem;
+  padding: 0.7rem;
   margin-bottom: 0;
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
 }
 
 @-ms-viewport {
@@ -963,3 +1000,19 @@ fieldset {
 }
 
 /* media selectors   */
+@media only screen and (min-width: 924px) {
+  .caption {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  form {
+    margin-left: 0;
+  }
+  pre {
+    min-width: 80%;
+    margin: 0;
+    margin-top: 1rem;
+  }
+}

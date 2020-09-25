@@ -1,12 +1,13 @@
+
 $color-Primary: #79eadf;
 $color-Secondary: #FB4D3A;
-$color-Tertiary: #54294C;
-$color-Quaternary: #1E1E3D;
+// $color-Tertiary: #54294C;
+$color-Tertiary: #8D70C5;
+$color-Grey: #666;
 
-$color-Primary-Dark: adjust-color($color-Primary, $saturation: -10%, $lightness: -40%);
-$color-Secondary-Dark: adjust-color($color-Secondary, $saturation: -10%, $lightness: -40%);
-$color-Tertiary-Dark: adjust-color($color-Tertiary, $saturation: -10%, $lightness: -40%);
-$color-Quaternary-Dark: adjust-color($color-Quaternary, $saturation: -10%, $lightness: -40%);
+$color-Primary-Dark: adjust-color($color-Primary, $saturation: -10%, $lightness: -25%);
+$color-Secondary-Dark: adjust-color($color-Secondary, $saturation: -10%, $lightness: -25%);
+$color-Tertiary-Dark: adjust-color($color-Tertiary, $saturation: -10%, $lightness: -25%);
 
 // Nav settings
 $topHorizontalNav: true;
@@ -17,17 +18,21 @@ $topHorizontalNav: true;
     }
 $transparentNavBg: true;
 
-
 /* -- Fonts -- */
-$font-Dir: 'fonts/';
+//  Standard Nunito and Work Sans
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,200;1,400;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
+$font-Primary: 'Work Sans', sans-serif;
 
-$font-Primary: 'WorkSans';
+$font-Secondary: 'Nunito', sans-serif;
 
-$font-Primary-Weights: ('-Light':200, '-Regular':400,'-Medium':500 ,'-Bold':700);
-$font-Primary-Italics: ('-LightItalic':200, '-Italic':400, '-BoldItalic':700);
-
-
-$font-Secondary: 'Nunito';
-
-$font-Secondary-Weights: ('-Light':200, '-Regular':400, '-Bold':700);
-$font-Secondary-Italics: ('-LightItalic':200, '-Italic':400, '-BoldItalic':700);
+// To use custom fonts, toggle the boolean, name the font-families, and clarify which weights you have in the filesystem
+$customFonts: false;
+@if ($customFonts) {
+  $font-Dir: 'fonts/';
+  $font-Primary: 'WorkSans';
+  $font-Primary-Weights: ('-Light':200, '-Regular':400,'-Medium':500 ,'-Bold':700);
+  $font-Primary-Italics: ('-LightItalic':200, '-Italic':400, '-BoldItalic':700);
+  $font-Secondary: 'Nunito';
+  $font-Secondary-Weights: ('-Light':200, '-Regular':400, '-Bold':700);
+  $font-Secondary-Italics: ('-LightItalic':200, '-Italic':400, '-BoldItalic':700);
+}

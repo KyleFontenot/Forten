@@ -1,5 +1,6 @@
 //   Forten Framework
 //	 &copy; 2020 Kyle Fontenot
+// https://kylewilliamfontenot.github.io/Forten/
 
 @import "mixins";
 @import "flexbox";
@@ -10,7 +11,6 @@
 	#swatch5 {background-color:$color-Primary-Dark;}
 	#swatch6 {background-color:$color-Secondary-Dark;}
 	#swatch7 {background-color:$color-Tertiary-Dark;}
-	#swatch8 {background-color:$color-Quaternary-Dark;}
 
 /* -- Framework -- */
 
@@ -18,25 +18,33 @@
 
 body {
 	font-family:$font-Primary;
-	font-size:0.8rem;
+	font-size:0.9rem;
+	display:inline-block;
 }
+
 .hero {
 	position:relative;
 	min-width:20rem;
 	display:block;
 	width:100%;
 
-	&.hero--main {
-		background-image:linear-gradient(to bottom right, $color-Primary 10%, white 70%, $color-Secondary);
-		background-attachment:local;
-		background-size:100%;
-		background-position: 10% 10%;
+	&.hero--header {
+		// background-image:linear-gradient(to bottom right, $color-Primary 10%, white 70%, $color-Secondary);
+		// background-attachment:local;
+		// background-size:100%;
+		// background-position: 10% 10%;
+		animation-name: hero-main-animation;
+		animation-duration: 4s;
+		animation-iteration-count:infinite;
+		background-color:white;
+		animation-direction: alternate;
+		position:relative;
 		left:0;
-		min-height:38rem;
+		top:0;
+		min-height:32rem;
 		max-height:50vh;
 		color:#666;
-
-
+		// margin-bottom:-10rem;
 		&::after {
 			content:"";
 			background-color:white;
@@ -44,11 +52,12 @@ body {
 			left:-10rem;
 			bottom:-18rem;
 			width: 120rem;
-      height: 16rem;
+      height: 12rem;
 			transform: rotate(14deg);
-
+			overflow:hidden;
+			display:inline;
 		}
-		& .hero--main__sub {
+		& .hero--header__sub {
 			position:absolute;
 			top:40%;
 			right:10%;
@@ -56,26 +65,40 @@ body {
 	}
 }
 
-// Refer to the mixins SCSS partial for the logical constructor for nav
-nav {
-	font-size:16px;
-	letter-spacing:1.2px;
-	padding-left:2rem;
-	padding-right:2rem;
-	z-index:800;
-	& ul {
+@keyframes hero-main-animation {
+	0% {
+		box-shadow: 8rem 4rem 15rem -5rem inset $color-Primary,
+		-2rem -1rem 8rem -4rem inset $color-Secondary;
+	}
+	50% {
+		box-shadow: 2rem 10rem 15rem -5rem inset $color-Primary,
+		-1rem -2rem 8rem -4rem inset $color-Secondary;
+	}
+	100% {
+		box-shadow: -8rem 6rem 15rem -5rem inset $color-Primary,
+		2rem -1rem 8rem -4rem inset $color-Secondary;
+	}
+}
 
+// Refer to the mixins SCSS partial for the logical constructor for nav.
+nav {
+	z-index:800;
+	position:absolute;
+	width:100%;
+	& ul {
+		display:flex;
+		flex-direction:row;
+		flex-wrap:wrap;
+		@include navItemAlign;
 		& li {
 			display:inline-block;
-			@include navItemAlign;
-			margin-right: 1rem;
+			// margin-right: 1rem;
 			& a {
 				display:block;
-				padding:1.2rem;
-				padding-left:4rem;
-				padding-right:4rem;
+				padding:1.2rem 3.5rem;
 				border-radius:16px;
-
+				font-size:1.2rem;
+				letter-spacing:1.2px;
 			}
 		}
 	}
@@ -84,17 +107,18 @@ nav {
 h1 {
 	font-family:$font-Secondary;
 	font-size:2.2rem;
-	letter-spacing:2.4px;
+	letter-spacing:4px;
 	font-weight:bold;
-	margin-bottom:1.6rem;
+	padding-bottom:1.4rem;
 	line-height:54px;
+
 }
 h2 {
 	font-family:$font-Secondary;
 	font-size:1.9rem;
 	letter-spacing:1px;
-	margin-bottom:0.8rem;
-	margin-top:0.8rem;
+	padding-bottom:1rem;
+	padding-top:0.2rem;
 }
 h3 {
 	font-family:$font-Primary;
@@ -102,7 +126,7 @@ h3 {
 	font-weight:bold;
 	letter-spacing:1.6px;
 	line-height:38px;
-	margin-bottom:0.5rem;
+	padding-bottom:0.8rem;
 }
 h4 {
 	font-family:$font-Primary;
@@ -110,31 +134,42 @@ h4 {
 	color:$color-Primary-Dark;
 	line-height:28px;
 	letter-spacing:1.4px;
-	padding-top:1rem;
 	padding-bottom:1rem;
 }
 
 
 p {
-	margin-bottom:1rem;
+	margin-bottom:1.5rem;
+}
+code {
+font-family:monospace;
+font-size:1.2rem;
 }
 pre {
 	border-radius: 20px;
 	font-size:1.1rem;
-	display:inline-block;
+	display:block;
 	min-width:50%;
+	margin:1rem;
 	padding:2rem;
-	box-shadow:-2px 4px 6px -2px  #666;
-	margin-bottom:1rem;
+	box-shadow:-2px 4px 8px -3px  #666;
 	background-color:#f8f8f8;
-	background:linear-gradient(to bottom, #f8f8f8 2rem,#f4f4f4);
+	background:linear-gradient(to bottom, #fafafa 2rem,#f4f4f4);
 }
-pre.pre--dark{
+.pre--dark{
 	background-color:#666;
 	background:linear-gradient(to bottom, #666 2rem,#999);
-	display:block;
-	border-radius:16px;
-	color:#fff;
+	color:white;
+}
+.pre--primary{
+	background-color:$color-Primary;
+	background:linear-gradient(to bottom, $color-Primary 2rem,$color-Primary-Dark);
+	color:white;
+}
+.pre--secondary{
+	background-color:$color-Secondary;
+	background:linear-gradient(to bottom, $color-Secondary 2rem,$color-Secondary-Dark);
+	color:white;
 }
 i {
 	font-style:italic;
@@ -142,18 +177,27 @@ i {
 .caption {
 	color: #696969;
 	background-color:#f8f8f8;
-	width:90%;
 	border-radius:16px;
-	padding:1.2rem;
-	margin:0 auto;
+	padding:1.4rem;
+	margin:0.2rem 2.2rem 1.4rem;
+	box-shadow:-1px 2px 9px -5px  #666;
 }
-code {
-font-family:monospace;
-}
+
+
+
 nav ul{
 	list-style-type:none;
 
 }
+
+ul, ol {
+	margin-left:2rem;
+	margin-bottom:2rem;
+	& li {
+		margin-bottom:1.2rem;
+	}
+}
+
 dd {
 	margin:1rem 1rem 1rem 2rem;
 }
@@ -238,7 +282,7 @@ input[type='radio'] {
 	}
 }
 
-button, input[type='submit'] {
+button, input[type='submit'], .button {
 	padding:0.8rem 1.4rem;
 	position:relative;
   border-radius: 12px;
@@ -254,7 +298,6 @@ button, input[type='submit'] {
 	font-weight:bold;
 	cursor:pointer;
 	margin:1rem 1rem 1.5rem 0;
-	box-shadow:0;
 	@include buttonAlts($color-Primary)
 	&:after {
 		content:"";
@@ -276,6 +319,44 @@ button, input[type='submit'] {
 	@include buttonAlts($color-Tertiary);
 }
 
+.badge {
+	position:relative;
+  border-radius: 14px;
+	font-family: $font-Secondary;
+	font-size:1.2rem;
+	padding:1rem 1.4rem;
+	letter-spacing:1.8px;
+	margin:1rem 1rem 1.5rem 0;
+	transition: box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+	font-weight:bold;
+	display:inline-block;
+
+	color:$color-Grey;
+	@include badgeAlts($color-Primary);
+	&.badge--Secondary {
+		@include badgeAlts($color-Secondary);
+	}
+	&.badge--Tertiary {
+		@include badgeAlts($color-Tertiary);
+	}
+	&.badge--Grey {
+		@include badgeAlts($color-Grey);
+	}
+	&.badge--large {
+		font-size:1.8rem;
+		padding:1.2rem 2rem;
+		letter-spacing:3.5px;
+		// margin:1rem 1rem 1.5rem 0;
+		border-radius:20px;
+	}
+	&.badge--small {
+		font-size:1rem;
+		padding:0.7rem 1.4rem;
+		letter-spacing:1.2px;
+		// margin:1rem 1rem 1.5rem 0;
+		border-radius:12px;
+	}
+}
 
 .switch {
   position: relative;
@@ -385,29 +466,76 @@ fieldset {
 	padding: 0;
 }
 
+#backToTop {
+	border:2px solid $color-Secondary;
+	position:fixed;
+	bottom:4rem;
+	right:10%;
+	border-radius:100%;
+	line-height:6rem;
+	padding:0.6rem;
+	background-color:white;
+	box-shadow:-2px 5px 8px -3px #333;
+}
+
+
+// Group these, and rename.
+.gg-arrow-up {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 22px;
+    height: 22px
+}
+.gg-arrow-up::after,
+.gg-arrow-up::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    top: 4px
+}
+.gg-arrow-up::after {
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid $color-Secondary;
+    border-left: 2px solid $color-Secondary;
+    transform: rotate(45deg);
+    left: 7px
+}
+.gg-arrow-up::before {
+    width: 2px;
+    height: 16px;
+    left: 10px;
+    background: $color-Secondary;
+}
+
 .swatch {
-	width:11rem;
-	height:11rem;
+	min-width:10rem;
+	min-height:10rem;
 	position:relative;
 	border-radius:28px;
 	background-color:$color-Primary;
 	overflow:hidden;
 	display:inline-block;
-	margin:1rem 1rem;
+	margin-bottom:1.5rem;
+	box-shadow:-2px 6px 10px -3px #333;
+	text-align:center;
 	& p {
 		position:absolute;
 		bottom:0;
 		background-color:rgba(20,20,20,0.5);
 		width:100%;
-		max-width:100%;
 		color:white;
 		text-align:center;
 		display:block;
-		right:0;
-		padding-left:1rem;
+		padding:0.7rem;
 		margin-bottom:0;
-		padding-top:0.7rem;
-		padding-bottom:0.7rem;
+		// right:0;
+		// padding-left:0.7rem;
+		// margin-bottom:0;
+		// padding-top:0.7rem;
+		// padding-bottom:0.7rem;
 	}
 }
 
@@ -417,3 +545,19 @@ fieldset {
 
 /* media selectors   */
 // do @media only screen and (min-width)
+
+@media only screen and (min-width:924px){
+	.caption {
+		width:60%;
+	}
+}
+@media only screen and (max-width:425px){
+	form {
+		margin-left:0;
+	}
+	pre {
+		min-width:80%;
+		margin:0;
+		margin-top:1rem;
+	}
+}
