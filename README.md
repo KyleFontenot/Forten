@@ -1,11 +1,14 @@
 # Forten CSS Framework
 Featuring:
-* Small file size
+* Small file size (~15KB!)
 * SCSS foundation and user-friendly variables
 * Flexbox-based system that is lighter than Bootstrap 
 * B.E.M. class-naming scheme 
 * Semi-flat, semi-skeueomorphic design aesthetics
 * Optional Javascript functionality
+
+Version: 0.2.3
+September 24, 2020
 
 ## Todo:
 ### Pre 1.0
