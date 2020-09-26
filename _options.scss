@@ -5,9 +5,7 @@ $color-Secondary: #FB4D3A;
 $color-Tertiary: #8D70C5;
 $color-Grey: #666;
 
-$color-Primary-Dark: adjust-color($color-Primary, $saturation: -10%, $lightness: -25%);
-$color-Secondary-Dark: adjust-color($color-Secondary, $saturation: -10%, $lightness: -25%);
-$color-Tertiary-Dark: adjust-color($color-Tertiary, $saturation: -10%, $lightness: -25%);
+
 
 // Nav settings
 $topHorizontalNav: true;

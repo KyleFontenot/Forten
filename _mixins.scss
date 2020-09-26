@@ -15,8 +15,16 @@
   }
 }
 
+$color-Primary-Dark: adjust-color($color-Primary, $saturation: -10%, $lightness: -20%);
+$color-Secondary-Dark: adjust-color($color-Secondary, $saturation: -10%, $lightness: -20%);
+$color-Tertiary-Dark: adjust-color($color-Tertiary, $saturation: -10%, $lightness: -20%);
+
+$color-Primary-Light: adjust-color($color-Primary, $saturation: -5%, $lightness: 25%);
+$color-Secondary-Light: adjust-color($color-Secondary, $saturation: -5%, $lightness: 20%);
+$color-Tertiary-Light: adjust-color($color-Tertiary, $saturation: -5%, $lightness: 20%);
+
 @mixin buttonAlts($primary){
-  background-image: linear-gradient(white, white), linear-gradient(10deg, $primary, transparent 70%);
+  background-image: linear-gradient(white, white), linear-gradient(10deg, $primary, rgba(255, 255, 255, 0) 70%);
 	&:hover {
 		background-color: $primary;
 		box-shadow:1px -2px 8px -4px inset \$#{$primary}-Dark;
@@ -26,7 +34,7 @@
 @mixin badgeAlts($badgecolor){
   $lighterbadge: adjust-color($badgecolor, $saturation: -10%, $lightness: 20%);
 
-  background-image: linear-gradient(210deg, $lighterbadge, transparent 80%);
+  background-image: linear-gradient(210deg, $lighterbadge, rgba(255, 255, 255, 0) 80%);
 	// &:hover {
 	// 	background-color: $primary;
 	// 	box-shadow:1px -2px 8px -4px inset \$#{$primary}-Dark;
@@ -84,18 +92,18 @@
 
   @if ($transparentNavBg == true) {
     nav {
-      background-color:transparent;
+      background-color:rgba(255, 255, 255, 0);
       & ul {
         & li {
-          background-color:transparent;
+          background-color:rgba(255, 255, 255, 0);
           & a {
             text-decoration:none;
-            background-color:transparent;
+            background-color:rgba(255, 255, 255, 0);
             color:#666;
             transition: all 0.6s ease;
             &:hover {
               background-color:white;
-              background-image:linear-gradient(to bottom left, transparent 30%, white)
+              background-image:linear-gradient(to bottom left, rgba(255, 255, 255, 0) 30%, white)
             }
           }
         }
@@ -159,6 +167,7 @@
     }
     html {
       box-sizing: border-box;
+      -webkit-text-size-adjust:none;
     }
     *, *:before, *:after {
       box-sizing: inherit;

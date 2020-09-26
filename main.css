@@ -29,23 +29,23 @@ nav ul li {
 }
 
 nav {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0);
 }
 
 nav ul li {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0);
 }
 
 nav ul li a {
   text-decoration: none;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0);
   color: #666;
   transition: all 0.6s ease;
 }
 
 nav ul li a:hover {
   background-color: white;
-  background-image: linear-gradient(to bottom left, transparent 30%, white);
+  background-image: linear-gradient(to bottom left, rgba(255, 255, 255, 0) 30%, white);
 }
 
 .container, section {
@@ -329,15 +329,15 @@ nav ul li a:hover {
 
 /* TEMPORARY*/
 #swatch5 {
-  background-color: #2ab9ab;
+  background-color: #2fcebf;
 }
 
 #swatch6 {
-  background-color: #a91c0d;
+  background-color: #c1200e;
 }
 
 #swatch7 {
-  background-color: #513d78;
+  background-color: #5d4689;
 }
 
 /* -- Framework -- */
@@ -399,6 +399,7 @@ html, body {
 
 html {
   box-sizing: border-box;
+  -webkit-text-size-adjust: none;
 }
 
 *, *:before, *:after {
@@ -419,17 +420,25 @@ body {
 }
 
 .hero.hero--header {
+  box-shadow: 8em 8em 15em -4em #79eadf inset, -1em -2em 10em -5em #FB4D3A inset;
+  -webkit-animation-name: hero-main-animation;
   animation-name: hero-main-animation;
+  -webkit-animation-duration: 4s;
   animation-duration: 4s;
+  -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
-  background-color: white;
+  -webkit-animation-direction: alternate;
   animation-direction: alternate;
+  -webkit-animation-fill-mode: none;
+  animation-fill-mode: none;
+  background-color: white;
   position: relative;
   left: 0;
   top: 0;
   min-height: 32rem;
   max-height: 50vh;
   color: #666;
+  transition: box-shadow 4s;
 }
 
 .hero.hero--header::after {
@@ -453,13 +462,13 @@ body {
 
 @keyframes hero-main-animation {
   0% {
-    box-shadow: 8rem 4rem 15rem -5rem inset #79eadf, -2rem -1rem 8rem -4rem inset #FB4D3A;
+    box-shadow: 8em 8em 15em -4em #79eadf inset, -1em -2em 10em -5em #FB4D3A inset;
   }
   50% {
-    box-shadow: 2rem 10rem 15rem -5rem inset #79eadf, -1rem -2rem 8rem -4rem inset #FB4D3A;
+    box-shadow: 0em 10em 15em -5em #79eadf inset, 0em -4em 10em -5em #FB4D3A inset;
   }
   100% {
-    box-shadow: -8rem 6rem 15rem -5rem inset #79eadf, 2rem -1rem 8rem -4rem inset #FB4D3A;
+    box-shadow: -8em 8em 15em -5em #79eadf inset, 1em -2em 10em -5em #FB4D3A inset;
   }
 }
 
@@ -517,7 +526,7 @@ h3 {
 h4 {
   font-family: "Work Sans", sans-serif;
   font-size: 1.3rem;
-  color: #2ab9ab;
+  color: #2fcebf;
   line-height: 28px;
   letter-spacing: 1.4px;
   padding-bottom: 1rem;
@@ -552,13 +561,13 @@ pre {
 
 .pre--primary {
   background-color: #79eadf;
-  background: linear-gradient(to bottom, #79eadf 2rem, #2ab9ab);
+  background: linear-gradient(to bottom, #79eadf 2rem, #2fcebf);
   color: white;
 }
 
 .pre--secondary {
   background-color: #FB4D3A;
-  background: linear-gradient(to bottom, #FB4D3A 2rem, #a91c0d);
+  background: linear-gradient(to bottom, #FB4D3A 2rem, #c1200e);
   color: white;
 }
 
@@ -639,11 +648,13 @@ input[type='text'],
 input[type='url'],
 textarea,
 select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
-  background-color: transparent;
-  border: 2px solid transparent;
+  background-color: rgba(255, 255, 255, 0);
+  border: 2px solid rgba(255, 255, 255, 0);
   border-radius: 10px;
-  box-shadow: -1px 2px 6px -2px inset #aaa;
+  box-shadow: -1px 2px 6px -2px #aaa inset;
   box-sizing: inherit;
   padding: 0.8rem 1rem;
   display: inline-block;
@@ -700,7 +711,7 @@ button, input[type='submit'], .button {
   position: relative;
   border-radius: 12px;
   color: #777;
-  border: solid 3px transparent;
+  border: solid 3px rgba(255, 255, 255, 0);
   background-origin: border-box;
   background-clip: padding-box, border-box;
   background-color: rgba(255, 255, 255, 0);
@@ -711,7 +722,7 @@ button, input[type='submit'], .button {
   font-weight: bold;
   cursor: pointer;
   margin: 1rem 1rem 1.5rem 0;
-  background-image: linear-gradient(white, white), linear-gradient(10deg, #79eadf, transparent 70%);
+  background-image: linear-gradient(white, white), linear-gradient(10deg, #79eadf, rgba(255, 255, 255, 0) 70%);
 }
 
 button:hover, input[type='submit']:hover, .button:hover {
@@ -728,13 +739,13 @@ button:after, input[type='submit']:after, .button:after {
   position: absolute;
   left: 0;
   top: 0;
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0);
   border-radius: 8px;
   transition: background-color 0.4s ease-in-out;
 }
 
 .button--secondary {
-  background-image: linear-gradient(white, white), linear-gradient(10deg, #FB4D3A, transparent 70%);
+  background-image: linear-gradient(white, white), linear-gradient(10deg, #FB4D3A, rgba(255, 255, 255, 0) 70%);
 }
 
 .button--secondary:hover {
@@ -744,7 +755,7 @@ button:after, input[type='submit']:after, .button:after {
 }
 
 .button--tertiary {
-  background-image: linear-gradient(white, white), linear-gradient(10deg, #8D70C5, transparent 70%);
+  background-image: linear-gradient(white, white), linear-gradient(10deg, #8D70C5, rgba(255, 255, 255, 0) 70%);
 }
 
 .button--tertiary:hover {
@@ -765,19 +776,19 @@ button:after, input[type='submit']:after, .button:after {
   font-weight: bold;
   display: inline-block;
   color: #666;
-  background-image: linear-gradient(210deg, #d4f5f2, transparent 80%);
+  background-image: linear-gradient(210deg, #d4f5f2, rgba(255, 255, 255, 0) 80%);
 }
 
 .badge.badge--Secondary {
-  background-image: linear-gradient(210deg, #f8aba3, transparent 80%);
+  background-image: linear-gradient(210deg, #f8aba3, rgba(255, 255, 255, 0) 80%);
 }
 
 .badge.badge--Tertiary {
-  background-image: linear-gradient(210deg, #c8bedd, transparent 80%);
+  background-image: linear-gradient(210deg, #c8bedd, rgba(255, 255, 255, 0) 80%);
 }
 
 .badge.badge--Grey {
-  background-image: linear-gradient(210deg, #999999, transparent 80%);
+  background-image: linear-gradient(210deg, #999999, rgba(255, 255, 255, 0) 80%);
 }
 
 .badge.badge--large {
@@ -807,7 +818,10 @@ button:after, input[type='submit']:after, .button:after {
   display: block;
   width: 48px;
   height: 24px;
-  color: transparent;
+  color: rgba(255, 255, 255, 0);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 
@@ -825,7 +839,6 @@ button:after, input[type='submit']:after, .button:after {
   background-color: #f2f2f2;
   border-radius: 100px;
   box-shadow: -1px 3px 3px -1px inset #aaa;
-  -webkit-transition: background-color 0.15s ease-in-out;
   transition: background-color 0.3s ease-out, box-shadow 0.35s ease-in;
 }
 
@@ -837,13 +850,12 @@ button:after, input[type='submit']:after, .button:after {
   border-radius: 50%;
   background-color: #fff;
   box-shadow: 0 3px 4px -2px #999;
-  -webkit-transition: left 0.2s ease-in;
   transition: left 0.2s ease-in;
 }
 
 .switch .switch__input:checked + .switch__label::before {
   background-color: #79eadf;
-  box-shadow: 0px 1px 4px -2px inset rgba(40, 40, 40, 0.4);
+  box-shadow: 0px 1px 4px -2px rgba(40, 40, 40, 0.4) inset;
 }
 
 .switch .switch__input:checked + .switch__label::after {
