@@ -11,17 +11,24 @@
 	#swatch5 {background-color:$color-Primary-Dark;}
 	#swatch6 {background-color:$color-Secondary-Dark;}
 	#swatch7 {background-color:$color-Tertiary-Dark;}
+	#swatch8 {background-color:$color-Primary-Light;}
+	#swatch9 {background-color:$color-Secondary-Light;}
+	#swatch10 {background-color:$color-Tertiary-Light;}
+
 
 /* -- Framework -- */
-
 @include CssReset();
-
 body {
 	font-family:$font-Primary;
 	font-size:0.9rem;
 	display:inline-block;
+	width:100%;
 }
-
+main {
+	max-width:60rem;
+	display:block;
+	margin:0 auto;
+}
 .hero {
 	position:relative;
 	min-width:20rem;
@@ -29,11 +36,6 @@ body {
 	width:100%;
 
 	&.hero--header {
-		// background-image:linear-gradient(to bottom right, $color-Primary 15%, $color-Primary-Light 60%, white 70%, white 75%, $color-Secondary-Light);
-		// background-attachment:local;
-		// background-size:100%;
-		// background-position: 10% 10%;
-
 		box-shadow: 8em 8em 15em -4em $color-Primary inset,
 		 -1em -2em 10em -5em  $color-Secondary inset;
     -webkit-animation-name: hero-main-animation;
@@ -47,36 +49,34 @@ body {
 		-webkit-animation-fill-mode: none;
 		        animation-fill-mode: none;
 		background-color:white;
-		position:relative;
-		left:0;
-		top:0;
 		min-height:32rem;
 		max-height:50vh;
 		color:#666;
-		// margin-bottom:-10rem;
 		transition:box-shadow 4s;
-		&::before {
 
-		}
-		&::after {
-			content:"";
-			background-color:white;
-			position:absolute;
-			left:-10rem;
-			bottom:-18rem;
-			width: 120rem;
-      height: 12rem;
-			transform: rotate(14deg);
-			overflow:hidden;
-			display:inline;
-		}
 		& .hero--header__sub {
 			position:absolute;
 			top:40%;
 			right:10%;
 		}
 	}
+
+	@at-root #{&}.background-slice::after {
+		content:"";
+		background-color:white;
+		position:absolute;
+		left:-10rem;
+		bottom:-18rem;
+		width: 120rem;
+		height: 12rem;
+		transform: rotate(14deg);
+		overflow:hidden;
+		display:inline;
+		margin-bottom:2rem;
+	}
 }
+
+
 
 
 @keyframes hero-main-animation {
@@ -172,7 +172,13 @@ p {
 }
 code {
 font-family:monospace;
-font-size:1.2rem;
+
+}
+.code {
+	padding:5px 12px;
+	background-color:#f6f6f6;
+	color:$color-Primary-Dark;
+	border-radius:8px;
 }
 pre {
 	border-radius: 20px;
@@ -184,6 +190,7 @@ pre {
 	box-shadow:-2px 4px 8px -3px  #666;
 	background-color:#f8f8f8;
 	background:linear-gradient(to bottom, #fafafa 2rem,#f4f4f4);
+	color:#222;
 }
 .pre--dark{
 	background-color:#666;
@@ -352,17 +359,18 @@ button, input[type='submit'], .button {
 
 .badge {
 	position:relative;
-  border-radius: 14px;
+  border-radius: 12px;
 	font-family: $font-Secondary;
-	font-size:1.2rem;
-	padding:1rem 1.4rem;
-	letter-spacing:1.8px;
+	font-size:1.1rem;
+	letter-spacing:1px;
 	margin:1rem 1rem 1.5rem 0;
+	padding:0.5rem 1.3rem;
 	transition: box-shadow 0.4s ease-in-out, background-color 0.4s ease-in-out, color 0.4s ease-in-out;
 	font-weight:bold;
 	display:inline-block;
-
 	color:$color-Grey;
+	transform:scale(1);
+
 	@include badgeAlts($color-Primary);
 	&.badge--Secondary {
 		@include badgeAlts($color-Secondary);
@@ -374,18 +382,10 @@ button, input[type='submit'], .button {
 		@include badgeAlts($color-Grey);
 	}
 	&.badge--large {
-		font-size:1.8rem;
-		padding:1.2rem 2rem;
-		letter-spacing:3.5px;
-		// margin:1rem 1rem 1.5rem 0;
-		border-radius:20px;
+		transform:scale(1.4);
 	}
 	&.badge--small {
-		font-size:1rem;
-		padding:0.7rem 1.4rem;
-		letter-spacing:1.2px;
-		// margin:1rem 1rem 1.5rem 0;
-		border-radius:12px;
+		transform:scale(0.8);
 	}
 }
 
@@ -497,18 +497,58 @@ fieldset {
 	border-width: 0;
 	padding: 0;
 }
-
+.gridexample {
+	margin-bottom:0;
+}
+.gridexample * {
+	background-color:#f2f2f2;
+	border-radius:6px;
+	margin:0.5rem;
+	padding:6px;
+	color:#555;
+}
+footer {
+	background-color:#999;
+	text-align:center;
+	color:white;
+	font-size:0.4rem;
+}
+.padded {
+  padding:2rem;
+}
+#backToTopDiv {
+	position:absolute;
+	top:110vh;
+	right:10%;
+	bottom:3rem;
+	min-height:100%;
+}
 #backToTop {
 	border:2px solid $color-Secondary;
-	position:fixed;
-	bottom:4rem;
-	right:10%;
+	position: -webkit-sticky;
+	position: sticky;
+	top: 20%;
+	width:3rem;
 	border-radius:100%;
 	line-height:6rem;
 	padding:0.6rem;
+	cursor:pointer;
 	background-color:white;
 	box-shadow:-2px 5px 8px -3px #333;
 }
+// #backToTop {
+// 	border:2px solid $color-Secondary;
+// 	position:fixed;
+// 	bottom:4rem;
+// 	right:10%;
+// 	border-radius:100%;
+// 	line-height:6rem;
+// 	padding:0.6rem;
+// 	cursor:pointer;
+// 	background-color:white;
+// 	box-shadow:-2px 5px 8px -3px #333;
+// 	z-index:400;
+// }
 
 
 // Group these, and rename.

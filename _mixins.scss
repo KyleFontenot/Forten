@@ -1,12 +1,17 @@
 @import "options";
+
+// -- Custom Fonts --
+
+
+
 @mixin fontScaffold($path, $family, $suffix: '', $weight: 400, $italic: false, $svg: '') {
   @font-face {
     font-family: $family;
     @if $svg == '' {
-      src: url('#{$path}#{$suffix}.ttf') format('truetype'), url('#{$path}#{$suffix}.otf') format('opentype'), url('#{$path}#{$suffix}.woff2') format('woff2'), url('#{$path}#{$suffix}.woff') format('woff');
+      src: url('#{$path}#{$suffix}.otf') format('opentype'), url('#{$path}#{$suffix}.ttf') format('truetype'), url('#{$path}#{$suffix}.woff2') format('woff2'), url('#{$path}#{$suffix}.woff') format('woff');
     } @else {
       src: url('#{$path}#{$suffix}.eot');
-      src: url('#{$path}#{$suffix}.ttf') format('truetype'), url('#{$path}#{$suffix}.eot?#iefix') format('embedded-opentype'), url('#{$path}#{$suffix}.woff2') format('woff2'), url('#{$path}#{$suffix}.woff') format('woff'), url('#{$path}#{$suffix}.svg##{$svg}') format('svg');
+      src: url('#{$path}#{$suffix}.ttf') format('truetype'), url('#{$path}#{$suffix}.eot?#iefix') format('embedded-opentype'), url('#{$path}#{$suffix}.woff2') format('woff2'), url('#{$path}#{$suffix}.woff') format('woff'), url('#{$path}#{$suffix}.svg##{$svg}') format('svg'), url('#{$path}#{$suffix}.otf') format('opentype');
     }
     font-weight: $weight;
     @if $italic {
@@ -14,35 +19,6 @@
     }
   }
 }
-
-$color-Primary-Dark: adjust-color($color-Primary, $saturation: -10%, $lightness: -20%);
-$color-Secondary-Dark: adjust-color($color-Secondary, $saturation: -10%, $lightness: -20%);
-$color-Tertiary-Dark: adjust-color($color-Tertiary, $saturation: -10%, $lightness: -20%);
-
-$color-Primary-Light: adjust-color($color-Primary, $saturation: -5%, $lightness: 25%);
-$color-Secondary-Light: adjust-color($color-Secondary, $saturation: -5%, $lightness: 20%);
-$color-Tertiary-Light: adjust-color($color-Tertiary, $saturation: -5%, $lightness: 20%);
-
-@mixin buttonAlts($primary){
-  background-image: linear-gradient(white, white), linear-gradient(10deg, $primary, rgba(255, 255, 255, 0) 70%);
-	&:hover {
-		background-color: $primary;
-		box-shadow:1px -2px 8px -4px inset \$#{$primary}-Dark;
-		color: \$#{$primary}-Dark;
-	}
-}
-@mixin badgeAlts($badgecolor){
-  $lighterbadge: adjust-color($badgecolor, $saturation: -10%, $lightness: 20%);
-
-  background-image: linear-gradient(210deg, $lighterbadge, rgba(255, 255, 255, 0) 80%);
-	// &:hover {
-	// 	background-color: $primary;
-	// 	box-shadow:1px -2px 8px -4px inset \$#{$primary}-Dark;
-	// 	color: \$#{$primary}-Dark;
-	// }
-}
-
-// Uncomment for enabling custom fonts
 // Font additions for Primary
 @if ($customFonts) {
   @each $w, $n in $font-Primary-Weights {
@@ -58,6 +34,36 @@ $color-Tertiary-Light: adjust-color($color-Tertiary, $saturation: -5%, $lightnes
   @each $w, $n in $font-Secondary-Italics {
     @include fontScaffold('#{$font-Dir}/#{$font-Secondary}/#{$font-Secondary}', $font-Secondary, $w, $n,true);
   }
+  // Font additions for Tertiary //
+  @each $w, $n in $font-Tertiary-Weights {
+    @include fontScaffold('#{$font-Dir}/#{$font-Tertiary}/#{$font-Tertiary}', $font-Tertiary, $w, $n);
+  }
+  @each $w, $n in $font-Tertiary-Italics {
+    @include fontScaffold('#{$font-Dir}/#{$font-Tertiary}/#{$font-Tertiary}', $font-Tertiary, $w, $n,true);
+  }
+}
+
+$color-Primary-Dark: adjust-color($color-Primary, $saturation: -10%, $lightness: -25%);
+$color-Secondary-Dark: adjust-color($color-Secondary, $saturation: -10%, $lightness: -25%);
+$color-Tertiary-Dark: adjust-color($color-Tertiary, $saturation: -10%, $lightness: -25%);
+
+$color-Primary-Light: adjust-color($color-Primary, $saturation: -5%, $lightness: 20%);
+$color-Secondary-Light: adjust-color($color-Secondary, $saturation: -5%, $lightness: 20%);
+$color-Tertiary-Light: adjust-color($color-Tertiary, $saturation: -5%, $lightness: 20%);
+
+@mixin buttonAlts($primary){
+  background-image: linear-gradient(white, white), linear-gradient(10deg, $primary, rgba(255, 255, 255, 0) 70%);
+	&:hover {
+		background-color: $primary;
+		box-shadow:1px -2px 8px -4px inset \$#{$primary}-Dark;
+		color: \$#{$primary}-Dark;
+	}
+}
+@mixin badgeAlts($badgecolor){
+  $lighterbadge: adjust-color($badgecolor, $saturation: -10%, $lightness: 10%);
+  background-color: $lighterbadge;
+
+  background-image: linear-gradient(20deg, #fff 30%,   rgba(255, 255, 255, 0.7));
 }
 
 // Layout option execution //
@@ -110,6 +116,16 @@ $color-Tertiary-Light: adjust-color($color-Tertiary, $saturation: -5%, $lightnes
       }
     }
   }
+}
+
+@mixin asideLayout {
+  main {
+    max-width: 40rem;
+  }
+
+}
+@if ($layoutHasAside) {
+
 }
 
 
@@ -172,4 +188,8 @@ $color-Tertiary-Light: adjust-color($color-Tertiary, $saturation: -5%, $lightnes
     *, *:before, *:after {
       box-sizing: inherit;
     }
+    * {
+      scroll-behavior:smooth;
+    }
+
 }

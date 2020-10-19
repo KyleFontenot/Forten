@@ -6,34 +6,29 @@
   <title>Forten Framework</title>
   <meta name="description" content="A lightweight, flexbox-based
   CSS framework prioritizing in accessible SCSS options, grid class systems smaller but similar to Bootstrap's, and B.E.M. class schemes">
-
-
   <link rel="stylesheet" href="main.min.css" type="text/css">
-
 </head>
 <body id="body">
-
   <header id="header">
-    <nav>
+    <nav role="navigation">
       <ul>
         <li><a href="https://kylewilliamfontenot.github.io/Forten/">Home</a></li>
         <li><a href="https://github.com/kylewilliamfontenot/Forten" target="__blank" rel="noopener">Github</a></li>
       </ul>
     </nav>
-    <div class="hero hero--header">
+    <div class="hero hero--header background-slice">
       <div class="hero--header__sub" style="text-align:right;">
         <h1 style="letter-spacing:8px;">Forten CSS Framework</h1>
-        <p>Something</p>
+        <p>Simple beauty</p>
       </div>
     </div>
-
   </header>
-  <main>
+  <main role="main">
     <div class="container">
       <div class="row">
         <div class="col">
           <h1>Hello!</h1>
-          <p>Forten is an ongoing project to create a CSS framework that combines the conveniences that I see preferable and intuitive such as a mobile-first flexbox grid system, the B.E.M. naming scheme, minimal Javascript, a clean 2.5-dimensional aestheic, and SCSS features that offer color variables modular layout options.  </p>
+          <p>Forten is an ongoing project to create a CSS framework that combines a mobile-first flexbox grid system, a B.E.M. class-naming scheme, no Javascript, a clean 2.5-dimensional aesthetic, and modular SCSS features.</p>
           <h4>Feature Focuses:</h4>
           <ul>
             <li>B.E.M. naming schemes</li>
@@ -63,23 +58,24 @@
         </div>
       </div>
     </div>
+    <hr/>
     <div class="container">
       <h2>Typography</h2>
 
       <div class="row">
         <div class="col">
-          <div class="row">
-            <div class="col"></div>
-          </div>
+
           <h1>Heading 1</h1>
           <h2>Heading 2</h2>
           <h3>Heading 3</h3>
           <h4>Heading 4</h4>
           <p>Here is a typical paragraph to demonstrate the stylings. Forten keeps track of commonly used web design elements, but it also tries to focus on providing contextual elements to aid in readability.</p>
-          <p>The underline style, <code>u</code>, is a custom CSS styling using a border for a cleaner look. <u>This is underlined as an example.</u></p>
-        </div>
+          <p>The underline style, <code class="code">u</code>, is a custom CSS styling using a border for a cleaner look. <u>This is underlined as an example.</u></p>
+
       </div>
     </div>
+  </div>
+    <hr/>
 
 
 
@@ -93,11 +89,65 @@
           Conventional structures work, along with B.E.M.-named class augments.
         </p>
       </div>
-      <div class="row">
-        <div class="col"><code></code></div>
+      <div class="row gridexample">
+        <div class="col">
+          <code>.col</code>
+        </div>
+        <div class="col">
+          <code>.col</code>
+        </div>
+        <div class="col">
+          <code>.col</code>
+        </div>
+      </div>
+
+      <div class="row gridexample">
+        <div class="col col--50">
+          <code>.col .col--50</code>
+        </div>
+        <div class="col">
+          <code>.col</code>
+        </div>
+        <div class="col">
+          <code>.col</code>
+        </div>
+      </div>
+
+      <div class="row gridexample">
+        <div class="col col--20 ">
+          <code>.col .col--20</code>
+        </div>
+        <div class="col col--50 col--offset-10">
+          <code>.col .col--50 .col--offset-10</code>
+        </div>
+        <div class="col">
+          <code>.col</code>
+        </div>
+      </div>
+
+      <div class="row gridexample">
+        <div class="col">
+          <code>.col</code>
+        </div>
+        <div class="col">
+          <code>.col</code>
+        </div>
+        <div class="col">
+          <code>.col</code>
+        </div>
+        <div class="col">
+          <code>.col</code>
+        </div>
+        <div class="col">
+          <code>.col</code>
+        </div>
+        <div class="col">
+          <code>.col</code>
+        </div>
       </div>
     </div>
   </div>
+  <hr/>
 
 
 
@@ -105,36 +155,38 @@
   <h2>Colors</h2>
   <p>Colors in the color scheme can be inputted into the SCSS partial, <code>_options.scss</code> and used throughout <code>main.scss</code>. On compilation, shades of the chosen color palette will be generated, and can be refered to with the SCSS suffix "-Dark". </p>
 
-  <div class="row">
-    <div class="col">
-      <div class="swatch"><p>$color-Primary</p></div>
+  <div class="row row--centered">
+    <div class="col col--33 col--centered">
+      <div class="swatch"><p>$color-Primary<br/>#79EADF</p>
+      </div>
     </div>
-    <div class="col">
-      <div class="swatch" style="background-color:#FB4D3A;"><p>$color-Secondary</p></div>
+    <div class="col col--33 col--centered">
+      <div class="swatch" style="background-color:#FB4D3A;"><p>$color-Secondary<br/>#FB4D3A</p></div>
     </div>
-    <div class="col">
-      <div class="swatch" style="background-color:#8D70C5;"><p>$color-Tertiary</p></div>
+    <div class="col col--33 col--centered">
+      <div class="swatch" style="background-color:#8D70C5;"><p>$color-Tertiary<br/>#8D70C5</p></div>
     </div>
-
   </div>
-  <h3>Built-in Shades</h3>
+  <h3>Built-in Shades & Tints</h3>
   <div class="row">
     <div class="col">
-      <div class="swatch" style="background-color:;" id="swatch5"><p>$color-Primary-Dark</p></div>
+      <div class="swatch"  id="swatch5"><p>$color-Primary-Dark</p></div>
+      <div class="swatch"  id="swatch8"><p>$color-Primary-Light</p></div>
     </div>
     <div class="col">
-      <div class="swatch" style="background-color:;" id="swatch6"><p>$color-Secondary-Dark</p></div>
+      <div class="swatch"  id="swatch6"><p>$color-Secondary-Dark</p></div>
+      <div class="swatch"  id="swatch9"><p>$color-Secondary-Light</p></div>
     </div>
     <div class="col">
-      <div class="swatch" style="background-color:;" id="swatch7"><p>$color-Tertiary-Dark</p></div>
+      <div class="swatch"  id="swatch7"><p>$color-Tertiary-Dark</p></div>
+      <div class="swatch"  id="swatch10"><p>$color-Tertiary-Light</p></div>
     </div>
-
   </div>
 </div>
+<hr/>
 
   <div class="container">
-    <div class="row">
-      <div class="col">
+
         <h2>Elements</h2>
         <h3>Lists</h3>
         <div class="row">
@@ -158,8 +210,6 @@
           </div>
         </div>
         <h3>Visual Cues</h3>
-
-
         <div class="row row--space-evenly">
           <div class="col">
             <h4>Captions</h4>
@@ -182,8 +232,6 @@
               <div class="badge badge--Secondary">Secondary Badge</div>
           </div>
         </div>
-
-
 
         <h3>Forms</h3>
         <form>
@@ -214,12 +262,13 @@
 
           <input type="number">
           <input type="submit">
+        </form>
 
           <h3>Buttons</h3>
           <button>Button</button><button class="button--secondary">Secondary Button</button>
 
-        </div>
-      </div>
+
+
       <h3>Coding blocks</h3>
       <div class="row">
         <div class="col ">
@@ -283,10 +332,18 @@
             </pre>
           </div>
         </div>
-    </div>
+      </div>
+
+
+
   </main>
-  <div id="backToTop">
-    <a href="#header" style="cursor:pointer;"><span class="gg-arrow-up"></span></a>
-  </div>
+  <!-- <div id="backToTopDiv">
+    <div id="backToTop">
+      <a href="#header"><span class="gg-arrow-up"></span></a>
+    </div>
+  </div> -->
+  <footer>
+    <p>2020 &copy; Kyle Fontenot</p>
+  </footer>
 </body>
 </html>

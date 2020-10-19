@@ -7,7 +7,7 @@ $color-Grey: #666;
 
 
 
-// Nav settings
+// Layout settings
 $topHorizontalNav: true;
     //
     @mixin navItemAlign {
@@ -15,6 +15,9 @@ $topHorizontalNav: true;
       //  options: flex-start, flex-end, center, space-evenly;
     }
 $transparentNavBg: true;
+
+$layoutHasAside: false;
+
 
 /* -- Fonts -- */
 //  Standard Nunito and Work Sans
@@ -24,13 +27,17 @@ $font-Primary: 'Work Sans', sans-serif;
 $font-Secondary: 'Nunito', sans-serif;
 
 // To use custom fonts, toggle the boolean, name the font-families, and clarify which weights you have in the filesystem
+// Name fonts by a dashed convention, like: WorkSans-Bold.otf
 $customFonts: false;
 @if ($customFonts) {
   $font-Dir: 'fonts/';
-  $font-Primary: 'WorkSans';
+  $font-Primary: 'AttenRoundNew';
   $font-Primary-Weights: ('-Light':200, '-Regular':400,'-Medium':500 ,'-Bold':700);
   $font-Primary-Italics: ('-LightItalic':200, '-Italic':400, '-BoldItalic':700);
-  $font-Secondary: 'Nunito';
+  $font-Secondary: 'AgletSans';
   $font-Secondary-Weights: ('-Light':200, '-Regular':400, '-Bold':700);
   $font-Secondary-Italics: ('-LightItalic':200, '-Italic':400, '-BoldItalic':700);
+  $font-Tertiary: 'Mokoko';
+  $font-Tertiary-Weights: ('-Light':200, '-Regular':400, '-Bold':700);
+  $font-Tertiary-Italics: ('-LightItalic':200, '-Italic':400, '-BoldItalic':700);
 }
